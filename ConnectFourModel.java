@@ -69,6 +69,25 @@ public class ConnectFourModel implements ConnectFourConstants {
 		return 0;
 	}
 	
+	private int checkCols() {
+		for(int col = 0; col < numCols(); col++) {
+			for(int startRow = 0; startRow <= numRows() - NUM_IN_A_ROW; startRow++) {
+				int[] values = new int[NUM_IN_A_ROW];
+				int index = 0;
+				for(int row = startRow + 1; row < startRow + NUM_IN_A_ROW; row++) {
+					values[index++] = board[row][col];
+				}
+				int result = allEqual(values);
+				if(result == PLAYER_ONE || result == PLAYER_TWO) return result;
+			}
+		}
+		return 0;
+	}
+	
+	private int checkDiags() {
+		
+	}
+	
 	private int allEqual(int[] values) {
 		if(values.length == 0) return 0;
 		int probeValue = values[0];
