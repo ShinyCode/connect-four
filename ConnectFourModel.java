@@ -88,7 +88,18 @@ public class ConnectFourModel implements ConnectFourConstants {
 	}
 	
 	private int checkDiags() {
-		
+		for(int startRow = 0; startRow <= numRows() - NUM_IN_A_ROW; startRow++) {
+			for(int startCol = 0; startCol <= numCols() - NUM_IN_A_ROW; startCol++) {
+				int[] values = new int[NUM_IN_A_ROW];
+				int index = 0;
+				for(int offset = 0; offset < NUM_IN_A_ROW; offset++) {
+					values[index++] = board[startRow + offset][startCol + offset];
+				}
+				int result = allEqual(values);
+				if(result == PLAYER_ONE || result == PLAYER_TWO) return result;
+			}
+		}
+		return 0;
 	}
 	
 	private int allEqual(int[] values) {
