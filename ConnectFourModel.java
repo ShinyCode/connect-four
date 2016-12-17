@@ -44,7 +44,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 		return false; // The column was full
 	}
 	
-	public int checkWin() {
+	public int checkWin() { // Returns player number who won, or 0 if no one has won yet
 		
 	}
 	
