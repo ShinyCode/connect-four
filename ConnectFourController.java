@@ -20,7 +20,7 @@ public class ConnectFourController extends ConsoleProgram implements ConnectFour
 			int move = getHumanMove(currentPlayer);
 			model.makeMove(currentPlayer, move);
 			int winner = model.checkWin();
-			if()
+			if(winner == PLAYER_ONE || winner == PLAYER_TWO) return winner;
 			numValidMoves++;
 			currentPlayer *= -1;
 		}
