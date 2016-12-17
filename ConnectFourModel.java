@@ -27,11 +27,11 @@ public class ConnectFourModel implements ConnectFourConstants {
 		return String.format(result);
 	}
 	
-	private int numRows() {
+	public int numRows() {
 		return board.length;
 	}
 	
-	private int numCols() {
+	public int numCols() {
 		if(board.length > 0) return board[0].length;
 		return 0;
 	}
