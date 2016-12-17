@@ -67,5 +67,14 @@ public class ConnectFourModel implements ConnectFourConstants {
 		}
 		return 0;
 	}
+	
+	private boolean allEqual(int[] values) {
+		if(values.length == 0) return true;
+		int probeValue = values[0];
+		for(int i = 1; i < values.length; i++) {
+			if(values[i] != probeValue) return false;
+		}
+		return true;
+	}
 }
 
