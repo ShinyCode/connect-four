@@ -33,18 +33,15 @@ public class ConnectFourModel implements ConnectFourConstants {
 	}
 	
 	public boolean makeMove(int player, int col) { // Returns whether the move was valid. player is 1 or -1.
-		if(col < 0 || col >= numCols() || isFull(col)) return false;
+		if(col < 0 || col >= numCols()) return false;
 		if(player != PLAYER_ONE && player != PLAYER_TWO) return false;
 		for(int row = numRows() - 1; row >= 0; row--) {
 			if(isEmpty(row, col)) {
 				board[row][col] = player;
+				return true;
 			}
 		}
-		return true;
-	}
-	
-	private boolean isFull(int col) {
-		return true;
+		return false; // The row was full
 	}
 	
 	private boolean isEmpty(int row, int col) {
