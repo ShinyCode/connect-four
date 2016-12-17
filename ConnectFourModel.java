@@ -23,6 +23,16 @@ public class ConnectFourModel implements ConnectFourConstants {
 		return String.format(result);
 	}
 	
+	public int[][] getBoardCopy() {
+		int[][] boardCopy = new int[numRows()][numCols()];
+		for(int row = 0; row < numRows(); row++) {
+			for(int col = 0; col < numCols(); col++) {
+				boardCopy[row][col] = board[row][col];
+			}
+		}
+		return boardCopy;
+	}
+	
 	public int numRows() {
 		return board.length;
 	}
