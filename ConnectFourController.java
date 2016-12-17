@@ -12,16 +12,19 @@ public class ConnectFourController extends ConsoleProgram implements ConnectFour
 		determineWinner(result);
 	}
 	
-	private void playGame() {
+	private int playGame() {
 		int currentPlayer = PLAYER_ONE;
 		while(numValidMoves < model.numRows() * model.numCols()) {
 			println(repString("-", 20));
 			println(model);
 			int move = getHumanMove(currentPlayer);
 			model.makeMove(currentPlayer, move);
+			int winner = model.checkWin();
+			if()
 			numValidMoves++;
 			currentPlayer *= -1;
 		}
+		return 0;
 	}
 	
 	private int getHumanMove(int player) {
