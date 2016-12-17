@@ -12,6 +12,8 @@ public class ConnectFourController extends ConsoleProgram implements ConnectFour
 	
 	private void playGame() {
 		while(true) {
+			// Get player one's move
+			
 			
 		}
 	}
