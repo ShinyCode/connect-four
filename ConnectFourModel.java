@@ -40,7 +40,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 		return moveHelper(player, col, true);
 	}
 	
-	public boolean checkMoveValid(int player, int col) {
+	public boolean moveIsValid(int player, int col) {
 		return moveHelper(player, col, false);
 	}
 	
