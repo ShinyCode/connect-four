@@ -10,6 +10,8 @@ public class ConnectFourController extends ConsoleProgram implements ConnectFour
 		numValidMoves = 0;
 		int result = playGame();
 		println(repString("-", 20));
+		println(model);
+		println(repString("-", 20));
 		determineWinner(result);
 	}
 	
