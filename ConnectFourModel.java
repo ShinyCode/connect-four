@@ -77,7 +77,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 			for(int startCol = 0; startCol <= numCols() - NUM_IN_A_ROW; startCol++) {
 				int[] values = new int[NUM_IN_A_ROW];
 				int index = 0;
-				for(int col = startCol + 1; col < startCol + NUM_IN_A_ROW; col++) {
+				for(int col = startCol; col < startCol + NUM_IN_A_ROW; col++) {
 					values[index++] = board[row][col];
 				}
 				int result = allEqual(values);
@@ -92,7 +92,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 			for(int startRow = 0; startRow <= numRows() - NUM_IN_A_ROW; startRow++) {
 				int[] values = new int[NUM_IN_A_ROW];
 				int index = 0;
-				for(int row = startRow + 1; row < startRow + NUM_IN_A_ROW; row++) {
+				for(int row = startRow; row < startRow + NUM_IN_A_ROW; row++) {
 					values[index++] = board[row][col];
 				}
 				int result = allEqual(values);
