@@ -44,13 +44,12 @@ public class ConnectFourModel implements ConnectFourConstants {
 		return false; // The column was full
 	}
 	
-	public int checkWin() { // Returns player number who won, or 0 if no one has won yet
-		
-	}
-	
 	private boolean isEmpty(int row, int col) {
 		return (board[row][col] != PLAYER_ONE && board[row][col] != PLAYER_TWO);
 	}
 	
+	public int checkWin() { // Returns player number who won, or 0 if no one has won yet
+		return 0;
+	}
 }
 
