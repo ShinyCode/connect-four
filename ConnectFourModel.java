@@ -1,6 +1,6 @@
 
 public class ConnectFourModel implements ConnectFourConstants {
-	int[][] board;
+	private int[][] board;
 	
 	public ConnectFourModel() {
 		board = new int[DEFAULT_ROWS][DEFAULT_COLS];
