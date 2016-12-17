@@ -18,7 +18,9 @@ public class ConnectFourModel implements ConnectFourConstants {
 				else if (board[r][c] == PLAYER_TWO) result += PLAYER_TWO_SYMBOL;
 				else result += EMPTY_SYMBOL;
 			}
+			if(r != numRows() - 1) result += ".%n";
 		}
+		return String.format(result);
 	}
 	
 	private int numRows() {
