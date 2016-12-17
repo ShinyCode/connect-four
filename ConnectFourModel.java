@@ -55,6 +55,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 	}
 	
 	private int checkRows() {
+		int values = 
 		for(int row = 0; row < numRows(); row++) {
 			for(int startCol = 0; startCol <= numCols() - NUM_IN_A_ROW; startCol++) {
 				int probeValue = board[row][startCol];
@@ -68,13 +69,14 @@ public class ConnectFourModel implements ConnectFourConstants {
 		return 0;
 	}
 	
-	private boolean allEqual(int[] values) {
-		if(values.length == 0) return true;
+	private int allEqual(int[] values) {
+		if(values.length == 0) return 0;
 		int probeValue = values[0];
+		if(probeValue != PLAYER_ONE && probeValue != PLAYER_TWO) return 0;
 		for(int i = 1; i < values.length; i++) {
-			if(values[i] != probeValue) return false;
+			if(values[i] != probeValue) return 0;
 		}
-		return true;
+		return probeValue;
 	}
 }
 
