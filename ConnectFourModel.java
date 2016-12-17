@@ -1,7 +1,9 @@
 
-public class ConnectFourModel {
-	public void run() {
-		/* You fill this in */
+public class ConnectFourModel implements ConnectFourConstants {
+	
+	public ConnectFourModel(int numRows, int numCols) {
+		
 	}
+	
 }
 
