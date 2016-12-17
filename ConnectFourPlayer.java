@@ -1,4 +1,4 @@
 
-public final class ConnectFourPlayer {
+public abstract class ConnectFourPlayer {
 
 }
