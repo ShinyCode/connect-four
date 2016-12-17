@@ -61,6 +61,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 				if(probeValue != PLAYER_ONE && probeValue != PLAYER_TWO) continue;
 			}
 		}
+		return 0;
 	}
 }
 
