@@ -44,6 +44,10 @@ public class ConnectFourModel implements ConnectFourConstants {
 		return false; // The column was full
 	}
 	
+	public int checkWin() {
+		
+	}
+	
 	private boolean isEmpty(int row, int col) {
 		return (board[row][col] != PLAYER_ONE && board[row][col] != PLAYER_TWO);
 	}
