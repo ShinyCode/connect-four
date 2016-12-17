@@ -57,7 +57,8 @@ public class ConnectFourModel implements ConnectFourConstants {
 	private int checkRows() {
 		for(int row = 0; row < numRows(); row++) {
 			for(int startCol = 0; startCol <= numCols() - NUM_IN_A_ROW; startCol++) {
-				
+				int probeValue = board[row][startCol];
+				if(probeValue != PLAYER_ONE && probeValue != PLAYER_TWO) continue;
 			}
 		}
 	}
