@@ -54,14 +54,12 @@ public class ConnectFourModel implements ConnectFourConstants {
 		return 0;
 	}
 	
-	private int sum(int row1, int col1, int row2, int col2) {
-		int result = 0;
-		for(int row = row1; row <= row2; row++) {
-			for(int col = col1; col<= col2; col++) {
-				result += board[row][col];
+	private int checkRows() {
+		for(int row = 0; row < numRows(); row++) {
+			for(int startCol = 0; startCol <= numCols() - NUM_IN_A_ROW; startCol++) {
+				
 			}
 		}
-		return result;
 	}
 }
 
