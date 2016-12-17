@@ -3,9 +3,11 @@ import acm.program.*;
 
 public class ConnectFourController extends ConsoleProgram implements ConnectFourConstants {
 	private ConnectFourModel model;
+	private int numValidMoves;
 	
 	public void run() {
 		model = new ConnectFourModel(DEFAULT_ROWS, DEFAULT_COLS);
+		numValidMoves = 0;
 		int result = playGame();
 		determineWinner(result);
 	}
@@ -13,11 +15,23 @@ public class ConnectFourController extends ConsoleProgram implements ConnectFour
 	private void playGame() {
 		int currentPlayer = PLAYER_ONE;
 		while(true) {
-			// Get player one's move
+			println(repString("-", 20));
+			println(model);
+			
 			
 			
 		}
 	}
+	
+	private int getHumanMove(int player) {
+		while(true) {
+			String name = (player == 1 ? "Player One" : "Player Two");
+			int move = readInt("Enter a move for " + name + ": ");
+			if(model.moveIsValid(player, move)) return move;
+			println("The move you entered was invalid.");
+		}
+	}
+	
 	
 	private void determineWinner(int result) {
 		if(result == PLAYER_ONE) {
@@ -27,5 +41,13 @@ public class ConnectFourController extends ConsoleProgram implements ConnectFour
 		} else {
 			println("The game ended in a draw.");
 		}
+	}
+	
+	private String repString(String s, int n) {
+		String result = "";
+		for(int i = 0; i < n; i++) {
+			result += s;
+		}
+		return result;
 	}
 }
