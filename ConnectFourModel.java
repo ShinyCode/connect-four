@@ -33,7 +33,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 	}
 	
 	public boolean makeMove(int player, int col) { // Returns whether the move was valid. player is 1 or -1.
-		if(col < 0 || col >= numCols()) return false;
+		if(col < 0 || col >= numCols()) return false; // Out of bounds
 		if(player != PLAYER_ONE && player != PLAYER_TWO) return false;
 		for(int row = numRows() - 1; row >= 0; row--) {
 			if(isEmpty(row, col)) {
