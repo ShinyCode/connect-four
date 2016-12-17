@@ -11,7 +11,9 @@ public class ConnectFourController extends ConsoleProgram implements ConnectFour
 	}
 	
 	private void playGame() {
-		
+		while(true) {
+			
+		}
 	}
 	
 	private void determineWinner(int result) {
