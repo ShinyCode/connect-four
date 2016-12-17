@@ -22,7 +22,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 				else if (board[row][col] == PLAYER_TWO) result += PLAYER_TWO_SYMBOL;
 				else result += EMPTY_SYMBOL;
 			}
-			if(row != numRows() - 1) result += ".%n";
+			if(row != numRows() - 1) result += "%n";
 		}
 		return String.format(result);
 	}
