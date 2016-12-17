@@ -41,7 +41,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 				return true;
 			}
 		}
-		return false; // The row was full
+		return false; // The column was full
 	}
 	
 	private boolean isEmpty(int row, int col) {
