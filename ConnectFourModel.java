@@ -37,11 +37,19 @@ public class ConnectFourModel implements ConnectFourConstants {
 	}
 	
 	public boolean makeMove(int player, int col) { // Returns whether the move was valid. player is 1 or -1.
+		return moveHelper(player, col, true);
+	}
+	
+	public boolean checkMoveValid(int player, int col) {
+		return moveHelper(player, col, false);
+	}
+	
+	private boolean moveHelper(int player, int col, boolean makeMove) {
 		if(col < 0 || col >= numCols()) return false; // Out of bounds
 		if(player != PLAYER_ONE && player != PLAYER_TWO) return false;
 		for(int row = numRows() - 1; row >= 0; row--) {
 			if(isEmpty(row, col)) {
-				board[row][col] = player;
+				if(makeMove) board[row][col] = player;
 				return true;
 			}
 		}
