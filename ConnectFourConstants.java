@@ -7,4 +7,5 @@ public interface ConnectFourConstants {
 	public static final int PLAYER_TWO = -1;
 	public static final char PLAYER_ONE_SYMBOL = 'O';
 	public static final char PLAYER_TWO_SYMBOL = 'X';
+	public static final char EMPTY_SYMBOL = '-';
 }
