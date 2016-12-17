@@ -1,4 +1,6 @@
 
-public class ConnectFourController {
+import acm.program.*;
+
+public class ConnectFourController extends ConsoleProgram {
 
 }
