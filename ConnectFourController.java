@@ -14,12 +14,13 @@ public class ConnectFourController extends ConsoleProgram implements ConnectFour
 	
 	private void playGame() {
 		int currentPlayer = PLAYER_ONE;
-		while(true) {
+		while(numValidMoves < model.numRows() * model.numCols()) {
 			println(repString("-", 20));
 			println(model);
-			
-			
-			
+			int move = getHumanMove(currentPlayer);
+			model.makeMove(currentPlayer, move);
+			numValidMoves++;
+			currentPlayer *= -1;
 		}
 	}
 	
