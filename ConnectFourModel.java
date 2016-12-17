@@ -49,7 +49,19 @@ public class ConnectFourModel implements ConnectFourConstants {
 	}
 	
 	public int checkWin() { // Returns player number who won, or 0 if no one has won yet
+		// Check rows
+		
 		return 0;
+	}
+	
+	private int sum(int row1, int col1, int row2, int col2) {
+		int result = 0;
+		for(int row = row1; row <= row2; row++) {
+			for(int col = col1; col<= col2; col++) {
+				result += board[row][col];
+			}
+		}
+		return result;
 	}
 }
 
