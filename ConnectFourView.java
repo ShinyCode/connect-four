@@ -1,7 +1,9 @@
+import java.awt.event.MouseListener;
+
 import dashboard.control.*;
 import acm.graphics.*;
 
-public class ConnectFourView extends GCanvas implements ConnectFourConstants {
+public class ConnectFourView extends GCanvas implements ConnectFourConstants, MouseListener {
 	private GOval[][] pieces;
 	private TouchButton[] buttons;
 	private boolean waitingForHumanMove = false;
@@ -12,11 +14,13 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	public ConnectFourView() {
 		pieces = new GOval[DEFAULT_ROWS][DEFAULT_COLS];
 		buttons = new TouchButton[DEFAULT_COLS];
+		addMouseListener(this);
 	}
 	
 	public ConnectFourView(int numRows, int numCols) {
 		pieces = new GOval[numRows][numCols];
 		buttons = new TouchButton[numCols];
+		addMouseListener(this);
 	}
 	
 	public int numRows() {
