@@ -116,7 +116,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	public void mouseClicked(MouseEvent e) {
 		GObject o = getElementAt(e.getX(), e.getY());
 		if(o != null) e.translatePoint(-(int)o.getX(), -(int)o.getY());
-		if(o instanceof Control) cmd = ((Control) o).mousePressed(e);
+		if(o instanceof Control) ((Control) o).mousePressed(e);
 	}
 
 	@Override
