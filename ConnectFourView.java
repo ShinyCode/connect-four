@@ -9,7 +9,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 		
 	}
 	
-	public void addMove(int player, int col) {
+	public void addMove(int player, int col) { // Blindly adds a move (no error-checking)
 		
 	}
 	
