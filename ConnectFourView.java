@@ -26,6 +26,10 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 		add(board);
 	}
 	
+	private double calcCellWidth() {
+		
+	}
+	
 	public int getHumanMove() {
 		return 0;
 	}
