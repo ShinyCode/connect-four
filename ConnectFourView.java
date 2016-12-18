@@ -7,19 +7,19 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	
 	public ConnectFourView() {
 		board = new int[DEFAULT_ROWS][DEFAULT_COLS];
-		redraw();
+		draw();
 	}
 	
 	public ConnectFourView(int numRows, int numCols) {
 		board = new int[numRows][numCols];
-		redraw();
+		draw();
 	}
 	
 	public void addMove(int player, int col) { // Blindly adds a move (no error-checking)
 		
 	}
 	
-	public void redraw() {
+	public void draw() {
 		
 	}
 	
