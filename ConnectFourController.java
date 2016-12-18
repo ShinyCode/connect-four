@@ -3,10 +3,12 @@ import acm.program.*;
 
 public class ConnectFourController extends ConsoleProgram implements ConnectFourConstants {
 	private ConnectFourModel model;
+	private ConnectFourView view;
 	private int numValidMoves;
 	
 	public void run() {
 		model = new ConnectFourModel(DEFAULT_ROWS, DEFAULT_COLS);
+		view = new ConnectFourView(DEFAULT_ROWS, DEFAULT_COLS);
 		numValidMoves = 0;
 		int result = playGame(null, null);
 		println(repString("-", 20));
