@@ -15,9 +15,6 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	public void run() {
 		view.draw();
 		numValidMoves = 0;
-		println("Trying to get human move...");
-		int move = view.getHumanMove();
-		println("Received this move: " + move);
 		int result = playGame(null, null);
 		determineWinner(result);
 	}
