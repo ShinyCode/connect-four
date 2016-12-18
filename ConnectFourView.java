@@ -90,15 +90,13 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	private void calcCellWidth() {
 		double availXSpace = getWidth() - 2 * BOARD_SIDE_MARGIN;
 		double availYSpace = getHeight() - (2 * BUTTON_MARGIN + BUTTON_HEIGHT) - BOARD_TOP_MARGIN - BOARD_BOTTOM_MARGIN;
-		int numRows = pieces.length;
-		int numCols = pieces[0].length;
-		if(((double)numRows / numCols) >= availYSpace / availXSpace) { // Too tall, use scale to availYSpace
-			cellWidth = availYSpace / numRows;
+		if(((double)numRows() / numCols()) >= availYSpace / availXSpace) { // Too tall, use scale to availYSpace
+			cellWidth = availYSpace / numRows();
 		} else {
-			cellWidth = availXSpace / numCols;
+			cellWidth = availXSpace / numCols();
 		}
-		boardX = BOARD_SIDE_MARGIN + (availXSpace - numCols * cellWidth) / 2;
-		boardY = 2 * BUTTON_MARGIN + BUTTON_HEIGHT + BOARD_TOP_MARGIN + (availYSpace - numRows * cellWidth) / 2;
+		boardX = BOARD_SIDE_MARGIN + (availXSpace - numCols() * cellWidth) / 2;
+		boardY = 2 * BUTTON_MARGIN + BUTTON_HEIGHT + BOARD_TOP_MARGIN + (availYSpace - numRows() * cellWidth) / 2;
 	}
 	
 	public int getHumanMove() {
