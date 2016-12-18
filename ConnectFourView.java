@@ -114,6 +114,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	}
 	
 	public int getHumanMove() {
+		waitingForHumanMove = true;
 		while(waitingForHumanMove) {}
 		return humanMove;
 	}
