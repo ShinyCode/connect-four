@@ -16,4 +16,12 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	public void refresh() {
 		
 	}
+	
+	public int getHumanMove() {
+		return 0;
+	}
+	
+	public void showMessage(String msg) {
+		
+	}
 }
