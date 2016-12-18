@@ -1,4 +1,5 @@
+import acm.graphics.*;
 
-public class ConnectFourView {
+public class ConnectFourView extends GCanvas {
 
 }
