@@ -24,6 +24,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	public void draw() {
 		System.out.println(getWidth());
 		calcCellWidth();
+		drawButtons();
 		drawBoard();
 		drawBoardLines();
 		drawPieces();
