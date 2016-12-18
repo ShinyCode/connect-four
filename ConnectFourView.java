@@ -16,6 +16,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	
 	public ConnectFourView(int numRows, int numCols) {
 		pieces = new GOval[numRows][numCols];
+		buttons = new TouchButton[numCols];
 	}
 	
 	public void addMove(int player, int col) { // Blindly adds a move (no error-checking)
