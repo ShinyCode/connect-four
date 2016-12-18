@@ -13,7 +13,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	}
 	
 	public void run() {
-		
+		view.draw();
 		numValidMoves = 0;
 		int result = playGame(null, null);
 		println(repString("-", 20));
