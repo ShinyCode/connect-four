@@ -116,18 +116,34 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	public void mouseClicked(MouseEvent e) {
 		GObject o = getElementAt(e.getX(), e.getY());
 		if(o != null) e.translatePoint(-(int)o.getX(), -(int)o.getY());
+		if(o instanceof Control) ((Control) o).mouseClicked(e);
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		GObject o = getElementAt(e.getX(), e.getY());
+		if(o != null) e.translatePoint(-(int)o.getX(), -(int)o.getY());
+		if(o instanceof Control) ((Control) o).mouseEntered(e);
+	}
+	
+	@Override
+	public void mouseExited(MouseEvent e) {
+		GObject o = getElementAt(e.getX(), e.getY());
+		if(o != null) e.translatePoint(-(int)o.getX(), -(int)o.getY());
+		if(o instanceof Control) ((Control) o).mouseExited(e);
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		GObject o = getElementAt(e.getX(), e.getY());
+		if(o != null) e.translatePoint(-(int)o.getX(), -(int)o.getY());
 		if(o instanceof Control) ((Control) o).mousePressed(e);
 	}
 
 	@Override
-	public void mouseEntered(MouseEvent e) {}
-	
-	@Override
-	public void mouseExited(MouseEvent e) {}
-
-	@Override
-	public void mousePressed(MouseEvent e) {}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {}
+	public void mouseReleased(MouseEvent e) {
+		GObject o = getElementAt(e.getX(), e.getY());
+		if(o != null) e.translatePoint(-(int)o.getX(), -(int)o.getY());
+		if(o instanceof Control) ((Control) o).mouseReleased(e);
+	}
 }
