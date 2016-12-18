@@ -2,7 +2,7 @@ import dashboard.control.*;
 import acm.graphics.*;
 
 public class ConnectFourView extends GCanvas implements ConnectFourConstants {
-	private int[][] board;
+	private GOval[][] pieces;
 	private TouchButton[] buttons;
 	
 	public ConnectFourView() {
