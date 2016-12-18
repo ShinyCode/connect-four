@@ -38,7 +38,11 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	}
 	
 	private void drawBoardLines() {
-		
+		int numRows = pieces.length;
+		int numCols = pieces[0].length;
+		for(int i = 1; i <= numCols; i++) {
+			add(new GLine(boardX + i * cellWidth, boardY, boardX + i * cellWidth, boardY + numRows * cellWidth));
+		}
 	}
 	
 	private void calcCellWidth() {
