@@ -3,7 +3,7 @@ import acm.graphics.*;
 
 public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	private int[][] board;
-	private TouchButton t;
+	private TouchButton[] buttons;
 	
 	public ConnectFourView() {
 		board = new int[DEFAULT_ROWS][DEFAULT_COLS];
