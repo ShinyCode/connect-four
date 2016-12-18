@@ -34,14 +34,6 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		return 0;
 	}
 	
-	private int getHumanMove() {
-		while(true) {
-			int move = readInt("Enter a move: ");
-			if(model.moveIsValid(player, move)) return move;
-			println("The move you entered was invalid.");
-		}
-	}
-	
 	private void determineWinner(int result) {
 		if(result == PLAYER_ONE) {
 			println("Player One was the winner!");
