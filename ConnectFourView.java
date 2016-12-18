@@ -33,6 +33,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	private void drawButtons() {
 		for(int col = 0; col < buttons.length; col++) {
 			buttons[col] = new TouchButton(cellWidth - 2 * BUTTON_MARGIN, BUTTON_HEIGHT, BUTTON_COLOR, Integer.toString(col));
+			add(buttons[col], boardX + col * cellWidth + BUTTON_MARGIN, BUTTON_MARGIN);
 		}
 	}
 	
