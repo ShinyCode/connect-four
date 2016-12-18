@@ -9,7 +9,11 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 		
 	}
 	
-	public void plotMove(int player, int col) {
+	public void addMove(int player, int col) {
+		
+	}
+	
+	public void refresh() {
 		
 	}
 }
