@@ -44,7 +44,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 			add(new GLine(boardX + i * cellWidth, boardY, boardX + i * cellWidth, boardY + numRows * cellWidth));
 		}
 		for(int i = 1; i <= numRows; i++) {
-			add(new GLine(boardX, boardY + i * cellWidth, boardX + numCols * cellWidth, boardY + i * cellWidth);
+			add(new GLine(boardX, boardY + i * cellWidth, boardX + numCols * cellWidth, boardY + i * cellWidth));
 		}
 	}
 	
