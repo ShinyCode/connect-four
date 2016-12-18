@@ -24,7 +24,8 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	}
 	
 	public int numCols() {
-		
+		if(pieces.length > 0) return pieces[0].length;
+		return 0;
 	}
 	
 	public void addMove(int player, int col) { // Blindly adds a move
