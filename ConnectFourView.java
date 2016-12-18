@@ -113,7 +113,9 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	}
 	
 	@Override
-	public void mouseClicked(MouseEvent e) {}
+	public void mouseClicked(MouseEvent e) {
+		System.out.println("HEY");
+	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {}
