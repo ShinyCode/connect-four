@@ -6,10 +6,14 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	private ConnectFourView view;
 	private int numValidMoves;
 	
-	public void run() {
+	public void init() {
 		model = new ConnectFourModel(DEFAULT_ROWS, DEFAULT_COLS);
 		view = new ConnectFourView(DEFAULT_ROWS, DEFAULT_COLS);
 		add(view, CENTER);
+	}
+	
+	public void run() {
+		
 		numValidMoves = 0;
 		int result = playGame(null, null);
 		println(repString("-", 20));
