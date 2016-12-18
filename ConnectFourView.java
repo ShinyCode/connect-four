@@ -4,6 +4,7 @@ import acm.graphics.*;
 public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	private GOval[][] pieces;
 	private TouchButton[] buttons;
+	private boolean waitingForHumanMove = false;
 	
 	public ConnectFourView() {
 		pieces = new GOval[DEFAULT_ROWS][DEFAULT_COLS];
