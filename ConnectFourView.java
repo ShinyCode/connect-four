@@ -1,3 +1,4 @@
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import dashboard.control.*;
@@ -110,4 +111,19 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	public void showMessage(String msg) {
 		// TODO: Implement this
 	}
+	
+	@Override
+	public void mouseClicked(MouseEvent e) {}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {}
+	
+	@Override
+	public void mouseExited(MouseEvent e) {}
+
+	@Override
+	public void mousePressed(MouseEvent e) {}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {}
 }
