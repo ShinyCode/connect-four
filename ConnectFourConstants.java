@@ -13,6 +13,7 @@ public interface ConnectFourConstants {
 	
 	public static final double BOARD_MARGIN = 30;
 	public static final double BUTTON_MARGIN = 10;
+	public static final double BUTTON_HEIGHT = 10;
 	public static final double PIECE_MARGIN = 10;
 	public static final Color PLAYER_ONE_COLOR = Color.BLACK;
 	public static final Color PLAYER_TWO_COLOR = Color.RED;
