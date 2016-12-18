@@ -6,7 +6,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	private TouchButton[] buttons;
 	
 	public ConnectFourView() {
-		board = new int[DEFAULT_ROWS][DEFAULT_COLS];
+		pieces = new GOval[DEFAULT_ROWS][DEFAULT_COLS];
 		draw();
 	}
 	
