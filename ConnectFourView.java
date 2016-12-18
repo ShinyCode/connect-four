@@ -48,6 +48,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 				piece.setFillColor(PLAYER_TWO_COLOR);
 			}
 			add(piece, boardX + col * cellWidth + PIECE_MARGIN, boardY + row * cellWidth + PIECE_MARGIN);
+			return;
 		}
 	}
 	
