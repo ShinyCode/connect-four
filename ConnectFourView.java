@@ -8,12 +8,10 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	
 	public ConnectFourView() {
 		pieces = new GOval[DEFAULT_ROWS][DEFAULT_COLS];
-		draw();
 	}
 	
 	public ConnectFourView(int numRows, int numCols) {
 		pieces = new GOval[numRows][numCols];
-		draw();
 	}
 	
 	public void addMove(int player, int col) { // Blindly adds a move (no error-checking)
