@@ -9,6 +9,7 @@ public class ConnectFourController extends ConsoleProgram implements ConnectFour
 	public void run() {
 		model = new ConnectFourModel(DEFAULT_ROWS, DEFAULT_COLS);
 		view = new ConnectFourView(DEFAULT_ROWS, DEFAULT_COLS);
+		add(view, CENTER);
 		numValidMoves = 0;
 		int result = playGame(null, null);
 		println(repString("-", 20));
