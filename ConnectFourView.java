@@ -55,7 +55,9 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 		for(int row = 0; row < numRows; row++) {
 			for(int col = 0; col < numCols; col++) {
 				if(pieces[row][col] == null) continue;
-				
+				GOval piece = pieces[row][col];
+				piece.setSize(cellWidth - 2 * PIECE_MARGIN, cellWidth - 2 * PIECE_MARGIN);
+				add(piece, boardX + col * cellWidth + PIECE_MARGIN, boardY + row * cellWidth + PIECE_MARGIN);
 			}
 		}
 	}
