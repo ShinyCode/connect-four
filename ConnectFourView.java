@@ -81,6 +81,6 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	}
 	
 	public void showMessage(String msg) {
-		
+		// TODO: Implement this
 	}
 }
