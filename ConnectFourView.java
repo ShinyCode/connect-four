@@ -33,8 +33,8 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	
 	private double calcCellWidth() {
 		double cellWidth = 0;
-		double availXSpace = getHeight() - (2 * BUTTON_MARGIN + BUTTON_HEIGHT) - BOARD_TOP_MARGIN - BOARD_BOTTOM_MARGIN;
-		double availYSpace = getWidth() - 2 * BOARD_SIDE_MARGIN;
+		double availXSpace = getWidth() - 2 * BOARD_SIDE_MARGIN;
+		double availYSpace = getHeight() - (2 * BUTTON_MARGIN + BUTTON_HEIGHT) - BOARD_TOP_MARGIN - BOARD_BOTTOM_MARGIN;
 		int numRows = pieces.length;
 		int numCols = pieces[0].length;
 		if(((double)numRows / numCols) >= availYSpace / availXSpace) { // Too tall, use scale to availYSpace
