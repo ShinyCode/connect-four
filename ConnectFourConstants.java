@@ -16,4 +16,5 @@ public interface ConnectFourConstants {
 	public static final double PIECE_MARGIN = 10;
 	public static final Color PLAYER_ONE_COLOR = Color.BLACK;
 	public static final Color PLAYER_TWO_COLOR = Color.RED;
+	public static final Color BOARD_COLOR = Color.BLUE;
 }
