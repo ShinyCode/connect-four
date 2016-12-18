@@ -67,6 +67,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 			buttons[col].setOffAction(new Runnable(){
 				public void run() {
 					System.out.println("Chose " + chosenCol);
+					humanMove = chosenCol;
 					waitingForHumanMove = false;
 				}
 			});
