@@ -21,6 +21,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	}
 	
 	public void draw() {
+		System.out.println("HEL");
 		GRect board = new GRect(BOARD_MARGIN, 2 * BUTTON_MARGIN + BUTTON_HEIGHT, getWidth() - 2 * BOARD_MARGIN, getHeight() - (2 * BUTTON_MARGIN + BUTTON_HEIGHT + BOARD_MARGIN));
 		board.setFilled(true);
 		board.setFillColor(BOARD_COLOR);
