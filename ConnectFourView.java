@@ -8,6 +8,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	private GOval[][] pieces;
 	private TouchButton[] buttons;
 	private boolean waitingForHumanMove = false;
+	private int humanMove = 0;
 	private double boardX = 0;
 	private double boardY = 0;
 	private double cellWidth = 0;
@@ -66,6 +67,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 			buttons[col].setOffAction(new Runnable(){
 				public void run() {
 					System.out.println("Chose " + chosenCol);
+					waitingForHumanMove = false;
 				}
 			});
 		}
