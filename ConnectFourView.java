@@ -23,7 +23,8 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 		int numRows = pieces.length;
 		for(int row = numRows - 1; row >= 0; row--) {
 			if(pieces[row][col] != null) continue;
-			
+			pieces[row][col] = new GOval(cellWidth - 2 * PIECE_MARGIN, cellWidth - 2 * PIECE_MARGIN);
+			add(pieces[row][col], boardX + col * cellWidth + PIECE_MARGIN, boardY + row * cellWidth + PIECE_MARGIN);
 		}
 	}
 	
