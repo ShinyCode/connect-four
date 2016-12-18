@@ -19,6 +19,14 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 		buttons = new TouchButton[numCols];
 	}
 	
+	public int numRows() {
+		return pieces.length;
+	}
+	
+	public int numCols() {
+		
+	}
+	
 	public void addMove(int player, int col) { // Blindly adds a move
 		int numRows = pieces.length;
 		int numCols = pieces[0].length;
