@@ -22,6 +22,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	private int playGame(ConnectFourPlayer playerOneAI, ConnectFourPlayer playerTwoAI) { // null indicates human
 		int currentPlayer = PLAYER_ONE;
 		while(numValidMoves < model.numRows() * model.numCols()) {
+			println("Getting human move...");
 			int move = view.getHumanMove();
 			model.makeMove(currentPlayer, move);
 			System.out.println(model);
