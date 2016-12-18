@@ -66,7 +66,6 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 			final int chosenCol = col;
 			buttons[col].setOffAction(new Runnable(){
 				public void run() {
-					System.out.println("Chose " + chosenCol);
 					humanMove = chosenCol;
 					waitingForHumanMove = false;
 				}
@@ -115,7 +114,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	
 	public int getHumanMove() {
 		waitingForHumanMove = true;
-		while(waitingForHumanMove) {}
+		while(waitingForHumanMove) {} // Will be changed by MouseEvent thread
 		return humanMove;
 	}
 	
