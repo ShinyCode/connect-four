@@ -53,12 +53,4 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 			println("The game ended in a draw.");
 		}
 	}
-	
-	private String repString(String s, int n) {
-		String result = "";
-		for(int i = 0; i < n; i++) {
-			result += s;
-		}
-		return result;
-	}
 }
