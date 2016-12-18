@@ -61,30 +61,24 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	}
 	
 	private void drawBoard() {
-		int numRows = pieces.length;
-		int numCols = pieces[0].length;
-		GRect board = new GRect(boardX, boardY, numCols * cellWidth, numRows * cellWidth);
+		GRect board = new GRect(boardX, boardY, numCols() * cellWidth, numRows() * cellWidth);
 		board.setFilled(true);
 		board.setFillColor(BOARD_COLOR);
 		add(board);
 	}
 	
 	private void drawBoardLines() {
-		int numRows = pieces.length;
-		int numCols = pieces[0].length;
-		for(int i = 1; i <= numCols; i++) {
-			add(new GLine(boardX + i * cellWidth, boardY, boardX + i * cellWidth, boardY + numRows * cellWidth));
+		for(int i = 1; i <= numCols(); i++) {
+			add(new GLine(boardX + i * cellWidth, boardY, boardX + i * cellWidth, boardY + numRows() * cellWidth));
 		}
-		for(int i = 1; i <= numRows; i++) {
-			add(new GLine(boardX, boardY + i * cellWidth, boardX + numCols * cellWidth, boardY + i * cellWidth));
+		for(int i = 1; i <= numRows(); i++) {
+			add(new GLine(boardX, boardY + i * cellWidth, boardX + numCols() * cellWidth, boardY + i * cellWidth));
 		}
 	}
 	
 	private void drawPieces() {
-		int numRows = pieces.length;
-		int numCols = pieces[0].length;
-		for(int row = 0; row < numRows; row++) {
-			for(int col = 0; col < numCols; col++) {
+		for(int row = 0; row < numRows(); row++) {
+			for(int col = 0; col < numCols(); col++) {
 				if(pieces[row][col] == null) continue;
 				GOval piece = pieces[row][col];
 				piece.setSize(cellWidth - 2 * PIECE_MARGIN, cellWidth - 2 * PIECE_MARGIN);
