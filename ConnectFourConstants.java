@@ -8,4 +8,8 @@ public interface ConnectFourConstants {
 	public static final char PLAYER_ONE_SYMBOL = 'O';
 	public static final char PLAYER_TWO_SYMBOL = 'X';
 	public static final char EMPTY_SYMBOL = '-';
+	
+	public static final double BOARD_MARGIN = 30;
+	public static final double BUTTON_MARGIN = 10;
+	
 }
