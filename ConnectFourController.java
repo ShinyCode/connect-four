@@ -15,7 +15,7 @@ public class ConnectFourController extends ConsoleProgram implements ConnectFour
 		determineWinner(result);
 	}
 	
-	private int playGame(ConnectFourPlayer playerOneAI, ConnectFourPlayer playerTwoAI) {
+	private int playGame(ConnectFourPlayer playerOneAI, ConnectFourPlayer playerTwoAI) { // null indicates human
 		int currentPlayer = PLAYER_ONE;
 		while(numValidMoves < model.numRows() * model.numCols()) {
 			println(repString("-", 20));
