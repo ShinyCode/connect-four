@@ -7,6 +7,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	private boolean waitingForHumanMove = false;
 	private double boardX = 0;
 	private double boardY = 0;
+	private double cellWidth = 0;
 	
 	public ConnectFourView() {
 		pieces = new GOval[DEFAULT_ROWS][DEFAULT_COLS];
@@ -35,8 +36,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 		add(board);
 	}
 	
-	private double calcCellWidth() {
-		double cellWidth = 0;
+	private void calcCellWidth() {
 		double availXSpace = getWidth() - 2 * BOARD_SIDE_MARGIN;
 		double availYSpace = getHeight() - (2 * BUTTON_MARGIN + BUTTON_HEIGHT) - BOARD_TOP_MARGIN - BOARD_BOTTOM_MARGIN;
 		int numRows = pieces.length;
@@ -48,7 +48,6 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 		}
 		boardX = BOARD_SIDE_MARGIN + (availXSpace - numCols * cellWidth) / 2;
 		boardY = 2 * BUTTON_MARGIN + BUTTON_HEIGHT + BOARD_TOP_MARGIN + (availYSpace - numRows * cellWidth) / 2;
-		return cellWidth;
 	}
 	
 	public int getHumanMove() {
