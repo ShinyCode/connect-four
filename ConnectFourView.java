@@ -115,7 +115,17 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	
 	public int getHumanMove() {
 		waitingForHumanMove = true;
-		while(waitingForHumanMove) {} // Will be changed by MouseEvent thread
+		int x = 0;
+		while(waitingForHumanMove) {
+			System.out.println("Repeating " + x);
+			x++;
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} // Will be changed by MouseEvent thread
 		return humanMove;
 	}
 	
