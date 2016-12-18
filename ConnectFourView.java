@@ -13,7 +13,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 		
 	}
 	
-	public void refresh() {
+	public void redraw() {
 		
 	}
 	
