@@ -11,7 +11,9 @@ public interface ConnectFourConstants {
 	public static final char PLAYER_TWO_SYMBOL = 'X';
 	public static final char EMPTY_SYMBOL = '-';
 	
-	public static final double BOARD_MARGIN = 30;
+	public static final double BOARD_SIDE_MARGIN = 30;
+	public static final double BOARD_BOTTOM_MARGIN = 30;
+	public static final double BOARD_TOP_MARGIN = 0;
 	public static final double BUTTON_MARGIN = 10;
 	public static final double BUTTON_HEIGHT = 40;
 	public static final double PIECE_MARGIN = 10;
