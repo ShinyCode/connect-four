@@ -12,17 +12,17 @@ public class ConnectFourController extends ConsoleProgram implements ConnectFour
 		add(view, CENTER);
 		numValidMoves = 0;
 		int result = playGame(null, null);
-		println(repString("-", 20));
-		println(model);
-		println(repString("-", 20));
-		determineWinner(result);
+		//println(repString("-", 20));
+		//println(model);
+		//println(repString("-", 20));
+		//determineWinner(result);
 	}
 	
 	private int playGame(ConnectFourPlayer playerOneAI, ConnectFourPlayer playerTwoAI) { // null indicates human
 		int currentPlayer = PLAYER_ONE;
 		while(numValidMoves < model.numRows() * model.numCols()) {
-			println(repString("-", 20));
-			println(model);
+			//println(repString("-", 20));
+			//println(model);
 			int move = getHumanMove(currentPlayer);
 			model.makeMove(currentPlayer, move);
 			int winner = model.checkWin();
