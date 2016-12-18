@@ -43,7 +43,6 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		}
 	}
 	
-	
 	private void determineWinner(int result) {
 		if(result == PLAYER_ONE) {
 			println("Player One was the winner!");
