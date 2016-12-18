@@ -19,19 +19,15 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		int move = view.getHumanMove();
 		println("Received this move: " + move);
 		int result = playGame(null, null);
-		println(repString("-", 20));
-		println(model);
-		println(repString("-", 20));
 		determineWinner(result);
 	}
 	
 	private int playGame(ConnectFourPlayer playerOneAI, ConnectFourPlayer playerTwoAI) { // null indicates human
 		int currentPlayer = PLAYER_ONE;
 		while(numValidMoves < model.numRows() * model.numCols()) {
-			println(repString("-", 20));
-			println(model);
-			int move = getHumanMove(currentPlayer);
+			int move = view.getHumanMove();
 			model.makeMove(currentPlayer, move);
+			view.addMove(currentPlayer, move);
 			int winner = model.checkWin();
 			if(winner == PLAYER_ONE || winner == PLAYER_TWO) return winner;
 			numValidMoves++;
