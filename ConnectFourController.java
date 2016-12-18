@@ -1,7 +1,7 @@
 
 import acm.program.*;
 
-public class ConnectFourController extends ConsoleProgram implements ConnectFourConstants {
+public class ConnectFourController extends Program implements ConnectFourConstants {
 	private ConnectFourModel model;
 	private ConnectFourView view;
 	private int numValidMoves;
