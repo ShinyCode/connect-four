@@ -23,12 +23,12 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants {
 	public void draw() {
 		System.out.println(getWidth());
 		double cellWidth = calcCellWidth();
-		int numRows = pieces.length;
-		int numCols = pieces[0].length;
 		drawBoard();
 	}
 	
 	private void drawBoard() {
+		int numRows = pieces.length;
+		int numCols = pieces[0].length;
 		GRect board = new GRect(boardX, boardY, numCols * cellWidth, numRows * cellWidth);
 		board.setFilled(true);
 		board.setFillColor(BOARD_COLOR);
