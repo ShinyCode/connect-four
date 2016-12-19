@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import acm.util.RandomGenerator;
+
 
 public class SimpleAI extends ConnectFourAI implements ConnectFourConstants {
-
+	private RandomGenerator rgen = RandomGenerator.getInstance();
+	
 	@Override
 	public int getMove(int[][] boardState) {
 		ConnectFourModel model = new ConnectFourModel(boardState);
@@ -16,6 +19,8 @@ public class SimpleAI extends ConnectFourAI implements ConnectFourConstants {
 			if(model.checkWin() != NO_PLAYER) winningCols.add(col);
 			model.undoMove();
 		}
+		if(!winningCols.isEmpty()) return winningCols.get(rgen.nextInt(winningCols.size()));;
+		else return emptyCols.get(rgen.nextInt(emptyCols.size()));
 		return 0;
 	}
 
