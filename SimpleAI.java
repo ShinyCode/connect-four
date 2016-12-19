@@ -33,7 +33,7 @@ public class SimpleAI extends ConnectFourAI implements ConnectFourConstants {
 		}
 		if(!winningCols.isEmpty()) return winningCols.get(rgen.nextInt(winningCols.size()));
 		else if(!emptyCols.isEmpty()) return emptyCols.get(rgen.nextInt(emptyCols.size()));
-		return NO_MOVE;
+		else return NO_MOVE;
 	}
 
 }
