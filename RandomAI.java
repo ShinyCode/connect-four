@@ -12,8 +12,9 @@ public class RandomAI extends ConnectFourAI {
 	
 	@Override
 	public int getMove(int[][] boardState) {
-		Thread.sleep(delay);
-		
+		try {
+			Thread.sleep(delay);
+		} catch(InterruptedException ex) {}
 		return 0;
 	}
 
