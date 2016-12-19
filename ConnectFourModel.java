@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 
 public class ConnectFourModel implements ConnectFourConstants {
 	private int[][] board;
@@ -5,14 +7,17 @@ public class ConnectFourModel implements ConnectFourConstants {
 	
 	public ConnectFourModel() {
 		board = new int[DEFAULT_ROWS][DEFAULT_COLS];
+		moves = new Stack<Integer>();
 	}
 	
 	public ConnectFourModel(int numRows, int numCols) {
 		board = new int[numRows][numCols];
+		moves = new Stack<Integer>();
 	}
 	
 	public ConnectFourModel(int[][] board) {
 		this.board = board;
+		moves = new Stack<Integer>();
 	}
 	
 	public String toString() {
@@ -48,11 +53,17 @@ public class ConnectFourModel implements ConnectFourConstants {
 	}
 	
 	public boolean makeMove(int player, int col) { // Returns whether the move was valid. player is 1 or -1.
-		return moveHelper(player, col, true);
+		boolean isValid = moveHelper(player, col, true);
+		if(isValid) moves.push(col);
+		return isValid;
 	}
 	
 	public boolean moveIsValid(int player, int col) {
 		return moveHelper(player, col, false);
+	}
+	
+	public boolean undoMove() {
+		
 	}
 	
 	private boolean moveHelper(int player, int col, boolean makeMove) {
