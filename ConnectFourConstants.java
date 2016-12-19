@@ -27,4 +27,5 @@ public interface ConnectFourConstants {
 	public static final double INDICATOR_MARGIN = 10;
 	public static final Color TEXT_BACKGROUND_COLOR = Color.ORANGE;
 	public static final String MESSAGE_FONT = "*-*-20";
+	public static final double MESSAGE_MARGIN = 5;
 }
