@@ -28,6 +28,9 @@ public class SimpleAI extends ConnectFourAI implements ConnectFourConstants {
 		for(int col = 0; col < model.numCols(); col++) {
 			if(model.colIsFull(col)) continue;
 			emptyCols.add(col);
+			model.makeMove(PLAYER_TWO, col);
+			if(model.checkWin() != NO_PLAYER) dangerCols.add(col);
+			model.undoMove();
 			model.makeMove(PLAYER_ONE, col);
 			if(model.checkWin() != NO_PLAYER) winningCols.add(col);
 			model.undoMove();
