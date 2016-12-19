@@ -1,10 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import acm.util.RandomGenerator;
+
 
 public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 	private static final int DEFAULT_DEPTH = 3;
 	private int maxDepth;
+	private RandomGenerator rgen = RandomGenerator.getInstance();
 	
 	public MinimaxAI() {
 		maxDepth = DEFAULT_DEPTH;
@@ -34,7 +37,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 			model.undoMove();
 		}
 		System.out.println("SEP");
-		return bestMove;
+		return bestMoves.get(rgen.nextInt(bestMoves.size()));
 	}
 	
 	private double minimax(ConnectFourModel model, int player, int depth) {
