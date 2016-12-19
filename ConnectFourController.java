@@ -19,13 +19,13 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		determineWinner(result);
 	}
 	
-	private int playGame(ConnectFourPlayer playerOneAI, ConnectFourPlayer playerTwoAI) { // null indicates human
+	private int playGame(ConnectFourAI playerOneAI, ConnectFourAI playerTwoAI) { // null indicates human
 		int currentPlayer = PLAYER_ONE;
 		while(numValidMoves < model.numRows() * model.numCols()) {
 			int move = 0;
 			boolean error = false;
 			while(true) {
-				ConnectFourPlayer currentAI = ((currentPlayer == PLAYER_ONE) ? playerOneAI : playerTwoAI);
+				ConnectFourAI currentAI = ((currentPlayer == PLAYER_ONE) ? playerOneAI : playerTwoAI);
 				String currentPlayerString = (currentPlayer == PLAYER_ONE) ? "1" : "2";
 				if(currentAI == null) { // Human player
 					if(!error) view.showMessage("Player " + currentPlayerString + "'s turn. Click a button to make your move.");
