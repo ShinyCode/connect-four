@@ -239,7 +239,6 @@ public class ConnectFourModel implements ConnectFourConstants {
 					for(int dcol = -1; dcol <= 1; dcol++) {
 						if(drow != 0 && dcol != 0 && inBounds(row + drow, col + dcol) && board[row + drow][col + dcol] == player
 								&& inBounds(row - drow, col - dcol) && board[row - drow][col - dcol] == player) {
-							System.out.println("INCREMENTED");
 							count++;
 						}
 					}
