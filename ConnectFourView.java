@@ -128,7 +128,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		GRect textBackground = new GRect(getWidth() - 2 * INDICATOR_MARGIN - INFOBAR_HEIGHT, INFOBAR_HEIGHT - 2 * INDICATOR_MARGIN);
 		textBackground.setFilled(true);
 		textBackground.setFillColor(TEXT_BACKGROUND_COLOR);
-		add(textBackground, INFOBAR_HEIGHT + INDICATOR_MARGIN, barY + INDICATOR_MARGIN,);
+		add(textBackground, INFOBAR_HEIGHT + INDICATOR_MARGIN, barY + INDICATOR_MARGIN);
 		playerIndicator = new GRect(INFOBAR_HEIGHT - 2 * INDICATOR_MARGIN, INFOBAR_HEIGHT - 2 * INDICATOR_MARGIN);
 		playerIndicator.setFilled(true);
 		setIndicatorColor();
