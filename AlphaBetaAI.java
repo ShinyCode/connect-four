@@ -20,5 +20,13 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	private double alphaBeta(ConnectFourModel model, int player, int depth, double alpha, double beta) {
+		return 0.0;
+	}
+	
+	private double eval(ConnectFourModel model) {
+		return model.countThrees(PLAYER_ONE) - 2 * model.countThrees(PLAYER_TWO);
+	}
 
 }
