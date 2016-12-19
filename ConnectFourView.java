@@ -129,6 +129,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		}
 		boardX = BOARD_SIDE_MARGIN + (availXSpace - numCols() * cellWidth) / 2;
 		boardY = 2 * BUTTON_MARGIN + BUTTON_HEIGHT + BOARD_TOP_MARGIN + (availYSpace - numRows() * cellWidth) / 2;
+		barY = boardY + numRows() * cellWidth + BOARD_BOTTOM_MARGIN;
 	}
 	
 	public int getHumanMove() {
