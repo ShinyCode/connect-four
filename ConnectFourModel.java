@@ -68,7 +68,10 @@ public class ConnectFourModel implements ConnectFourConstants {
 	
 	public boolean makeMove(int player, int col) { // Returns whether the move was valid. player is 1 or -1.
 		boolean isValid = moveHelper(player, col, true);
-		if(isValid) moves.push(col);
+		if(isValid) {
+			moves.push(col);
+			numMoves++;
+		}
 		return isValid;
 	}
 	
