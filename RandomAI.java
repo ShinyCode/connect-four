@@ -15,7 +15,13 @@ public class RandomAI extends ConnectFourAI {
 		try {
 			Thread.sleep(delay);
 		} catch(InterruptedException ex) {}
-		return 0;
+		int numRows = boardState.length;
+		int numCols = boardState[0].length;
+		for(int col = 0; col < numCols; col++) {
+			for(int row = numRows - 1; row >= 0; row--) {
+				
+			}
+		}
 	}
 
 }
