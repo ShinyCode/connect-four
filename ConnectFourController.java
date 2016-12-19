@@ -25,10 +25,10 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 			int move = 0;
 			ConnectFourPlayer currentAI = ((currentPlayer == PLAYER_ONE) ? playerOneAI : playerTwoAI);
 			String currentPlayerString = (currentPlayer == PLAYER_ONE) ? "1" : "2";
-			if(currentAI == null) {
+			if(currentAI == null) { // Human player
 				view.showMessage("Player " + currentPlayerString + "'s turn. Click a button to make your move.");
 				move = view.getHumanMove();
-			} else {
+			} else { // Computer player
 				int[][] board = model.getBoardCopy();
 				if(currentPlayer == PLAYER_TWO) ConnectFourModel.invertBoardState(board);
 				view.showMessage("Player " + currentPlayerString + " is thinking...");
