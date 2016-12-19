@@ -32,7 +32,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 				move = view.getHumanMove();
 			}
 			model.makeMove(currentPlayer, move);
-			view.addMove(currentPlayer, move);
+			view.addMove(move);
 			int winner = model.checkWin();
 			if(winner == PLAYER_ONE || winner == PLAYER_TWO) return winner;
 			numValidMoves++;
