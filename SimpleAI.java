@@ -35,9 +35,8 @@ public class SimpleAI extends ConnectFourAI implements ConnectFourConstants {
 			if(model.checkWin() != NO_PLAYER) winningCols.add(col);
 			model.undoMove();
 		}
-		System.out.println(winningCols);
-		System.out.println("SEP");
-		if(!winningCols.isEmpty()) return winningCols.get(rgen.nextInt(winningCols.size()));
+		if(!dangerCols.isEmpty()) return dangerCols.get(rgen.nextInt(dangerCols.size()));
+		else if(!winningCols.isEmpty()) return winningCols.get(rgen.nextInt(winningCols.size()));
 		else if(!emptyCols.isEmpty()) return emptyCols.get(rgen.nextInt(emptyCols.size()));
 		else return NO_MOVE;
 	}
