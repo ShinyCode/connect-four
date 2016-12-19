@@ -36,7 +36,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 		if(result == PLAYER_ONE) {
 			return 100;
 		} else if (result == PLAYER_TWO) {
-			return +100;
+			return -100;
 		}
 		if(depth == 0) return eval(model);
 		if(player == PLAYER_ONE) {
