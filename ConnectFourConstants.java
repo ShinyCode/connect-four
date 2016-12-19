@@ -21,4 +21,5 @@ public interface ConnectFourConstants {
 	public static final Color PLAYER_TWO_COLOR = Color.RED;
 	public static final Color BOARD_COLOR = Color.BLUE;
 	public static final Color BUTTON_COLOR = Color.ORANGE;
+	public static final Color HOLE_COLOR = Color.WHITE;
 }
