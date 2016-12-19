@@ -115,7 +115,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	
 	private void calcCellWidth() {
 		double availXSpace = getWidth() - 2 * BOARD_SIDE_MARGIN;
-		double availYSpace = getHeight() - (2 * BUTTON_MARGIN + BUTTON_HEIGHT) - BOARD_TOP_MARGIN - BOARD_BOTTOM_MARGIN;
+		double availYSpace = getHeight() - (2 * BUTTON_MARGIN + BUTTON_HEIGHT) - BOARD_TOP_MARGIN - BOARD_BOTTOM_MARGIN - INFOBAR_HEIGHT;
 		if(((double)numRows() / numCols()) >= availYSpace / availXSpace) { // Too tall, use scale to availYSpace
 			cellWidth = availYSpace / numRows();
 		} else {
