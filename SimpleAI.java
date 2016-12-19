@@ -22,6 +22,7 @@ public class SimpleAI extends ConnectFourAI implements ConnectFourConstants {
 			Thread.sleep(delay);
 		} catch(InterruptedException ex) {}
 		ConnectFourModel model = new ConnectFourModel(boardState);
+		List<Integer> dangerCols = new ArrayList<Integer>();
 		List<Integer> winningCols = new ArrayList<Integer>();
 		List<Integer> emptyCols = new ArrayList<Integer>();
 		for(int col = 0; col < model.numCols(); col++) {
