@@ -17,5 +17,13 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 		
 		return 0;
 	}
+	
+	private double minimax(int[][] boardState, int player, int depth) {
+		return 0.0;
+	}
+	
+	private double eval(int[][] boardState) {
+		return 0.0
+	}
 
 }
