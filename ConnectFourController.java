@@ -23,6 +23,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		int currentPlayer = PLAYER_ONE;
 		while(numValidMoves < model.numRows() * model.numCols()) {
 			int move = 0;
+			int error = false;
 			while(true) {
 				ConnectFourPlayer currentAI = ((currentPlayer == PLAYER_ONE) ? playerOneAI : playerTwoAI);
 				String currentPlayerString = (currentPlayer == PLAYER_ONE) ? "1" : "2";
