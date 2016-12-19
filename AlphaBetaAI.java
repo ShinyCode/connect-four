@@ -22,6 +22,30 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 	}
 	
 	private double alphaBeta(ConnectFourModel model, int player, int depth, double alpha, double beta) {
+		if(model.isFull()) return 0.0;
+		int result = model.checkWin();
+		if(result == PLAYER_ONE) return Double.POSITIVE_INFINITY;
+		else if (result == PLAYER_TWO) return Double.NEGATIVE_INFINITY;
+		if(depth == 0) return eval(model);
+		if(player == PLAYER_ONE) {
+			double value = Double.NEGATIVE_INFINITY;
+			for(int col = 0; col < model.numCols(); col++) {
+				if(!model.makeMove(player, col)) continue;
+				double newValue = minimax(model, -player, depth);
+				if(newValue > value) value = newValue;
+				model.undoMove();
+			}
+			return value;
+		} else if (player == PLAYER_TWO) {
+			double value = Double.POSITIVE_INFINITY;
+			for(int col = 0; col < model.numCols(); col++) {
+				if(!model.makeMove(player, col)) continue;
+				double newValue = minimax(model, -player, depth - 1);
+				if(newValue < value) value = newValue;
+				model.undoMove();
+			}
+			return value;
+		}
 		return 0.0;
 	}
 	
