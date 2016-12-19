@@ -15,7 +15,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	public void run() {
 		view.draw();
 		numValidMoves = 0;
-		int result = playGame(new SimpleAI(), new MinimaxAI());
+		int result = playGame(new SimpleAI(500), new MinimaxAI());
 		determineWinner(result);
 	}
 	
