@@ -59,6 +59,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	}
 	
 	public void draw() {
+		removeAll();
 		calcCellWidth();
 		drawButtons();
 		drawBoard();
