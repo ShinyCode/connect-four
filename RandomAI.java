@@ -1,5 +1,5 @@
 
-public class RandomAI extends ConnectFourAI {
+public class RandomAI extends ConnectFourAI implements ConnectFourConstants {
 	private int delay;
 	
 	public RandomAI() {
@@ -19,9 +19,10 @@ public class RandomAI extends ConnectFourAI {
 		int numCols = boardState[0].length;
 		for(int col = 0; col < numCols; col++) {
 			for(int row = numRows - 1; row >= 0; row--) {
-				
+				if
 			}
 		}
+		return NO_MOVE;
 	}
 
 }
