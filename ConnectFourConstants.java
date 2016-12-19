@@ -10,6 +10,7 @@ public interface ConnectFourConstants {
 	public static final char PLAYER_ONE_SYMBOL = 'O';
 	public static final char PLAYER_TWO_SYMBOL = 'X';
 	public static final char EMPTY_SYMBOL = '-';
+	public static final int NO_MOVE = -1;
 	
 	public static final double BOARD_SIDE_MARGIN = 30;
 	public static final double BOARD_BOTTOM_MARGIN = 10;
