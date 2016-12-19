@@ -31,6 +31,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 	}
 	
 	private double minimax(ConnectFourModel model, int player, int depth) {
+		System.out.println("MODEL");
 		System.out.println(model);
 		if(model.isFull()) return 0.0;
 		int result = model.checkWin();
