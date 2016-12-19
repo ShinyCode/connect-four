@@ -10,6 +10,10 @@ public class ConnectFourModel implements ConnectFourConstants {
 		board = new int[numRows][numCols];
 	}
 	
+	public ConnectFourModel(int[][] board) {
+		this.board = board;
+	}
+	
 	public String toString() {
 		String result = "";
 		for(int row = 0; row < numRows(); row++) {
