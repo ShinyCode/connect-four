@@ -205,7 +205,10 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		if(o instanceof Control) ((Control) o).mouseReleased(e);
 	}
 	
+	@Override
 	public void componentHidden(ComponentEvent e) { }
+	
+	@Override
 	public void componentMoved(ComponentEvent e) { }
 	
 	@Override
@@ -213,5 +216,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		System.out.println("Fired");
 		draw();
 	}
+	
+	@Override
 	public void componentShown(ComponentEvent e) { }
 }
