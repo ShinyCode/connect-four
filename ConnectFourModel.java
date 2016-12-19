@@ -4,20 +4,31 @@ import java.util.Stack;
 public class ConnectFourModel implements ConnectFourConstants {
 	private int[][] board;
 	private Stack<Integer> moves;
+	private int numMoves;
 	
 	public ConnectFourModel() {
 		board = new int[DEFAULT_ROWS][DEFAULT_COLS];
 		moves = new Stack<Integer>();
+		numMoves = 0;
 	}
 	
 	public ConnectFourModel(int numRows, int numCols) {
 		board = new int[numRows][numCols];
 		moves = new Stack<Integer>();
+		numMoves = 0;
 	}
 	
 	public ConnectFourModel(int[][] board) {
 		this.board = board;
 		moves = new Stack<Integer>();
+		numMoves = 0;
+		for(int col = 0; col < numCols(); col++) {
+			for(int row = numRows() - 1; row >= 0; row--) {
+				if(!isEmpty(row, col)) numMoves++;
+				else break;
+			}
+		}
+		
 	}
 	
 	public String toString() {
