@@ -56,6 +56,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		calcCellWidth();
 		drawButtons();
 		drawBoard();
+		drawBoardHoles();
 		drawBoardLines();
 		drawPieces();
 	}
