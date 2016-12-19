@@ -61,7 +61,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 			}
 			return value;
 		}
-		return 17.0;
+		return 0.0;
 	}
 	
 	private double eval(ConnectFourModel model) {
