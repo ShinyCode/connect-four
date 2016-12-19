@@ -8,7 +8,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 	}
 	
 	public MinimaxAI(int maxDepth) {
-		if(maxDepth <= 0) throw new IllegalArgumentException();
+		if(maxDepth < 0) throw new IllegalArgumentException();
 		this.maxDepth = maxDepth;
 	}
 	
