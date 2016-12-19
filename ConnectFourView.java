@@ -70,6 +70,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		drawBoardLines();
 		drawPieces();
 		drawInfoBar();
+		drawMsgLabel();
 	}
 	
 	private void drawButtons() {
