@@ -245,7 +245,6 @@ public class ConnectFourModel implements ConnectFourConstants {
 				}
 			}
 		}
-		System.out.println(count);
 		return count / 2;
 	}
 }
