@@ -209,13 +209,25 @@ public class ConnectFourModel implements ConnectFourConstants {
 		}
 	}
 	
+	public boolean inBounds(int row, int col) {
+		return (row >= 0 && row < numRows() && col >= 0 && col < numCols());
+	}
+	
 	public int countTwos(int player) {
 		int count = 0;
 		for(int row = 0; row < numRows(); row++) {
 			for(int col = 0; col < numCols(); col++) {
-				if(isEmpty(row, col)) continue;
+				if(board[row][col] != player) continue;
+				for(int drow = -1; drow <= 1; drow++) {
+					for(int dcol = -1; dcol <= 1; dcol++) {
+						if(drow != 0 && dcol != 0 && inBounds(row + drow, col + dcol) && board[row + drow][col + dcol] == player) {
+							count++;
+						}
+					}
+				}
 			}
 		}
+		return count / 2;
 	}
 	
 	public int countThrees(int player) {
