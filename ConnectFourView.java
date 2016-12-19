@@ -7,6 +7,7 @@ import acm.graphics.*;
 public class ConnectFourView extends GCanvas implements ConnectFourConstants, MouseListener {
 	private GOval[][] pieces;
 	private TouchButton[] buttons;
+	private GRect colorIndicator;
 	private boolean waitingForHumanMove = false;
 	private int humanMove = 0;
 	private double boardX = 0;
