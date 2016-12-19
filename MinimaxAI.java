@@ -19,11 +19,18 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 	}
 	
 	private double minimax(int[][] boardState, int player, int depth) {
+		ConnectFourModel model = new ConnectFourModel(boardState);
+		int result = model.checkWin();
+		if(result == PLAYER_ONE) {
+			return Double.POSITIVE_INFINITY;
+		} else if (result == PLAYER_TWO) {
+			
+		}
 		return 0.0;
 	}
 	
 	private double eval(int[][] boardState) {
-		return 0.0
+		return 0.0;
 	}
 
 }
