@@ -11,6 +11,8 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	private int humanMove = 0;
 	private double boardX = 0;
 	private double boardY = 0;
+	private double barX = 0;
+	private double barY = 0;
 	private double cellWidth = 0;
 	
 	public ConnectFourView() {
@@ -115,7 +117,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	}
 	
 	private void drawInfoBar() {
-		
+		GRect background = new GRect()
 	}
 	
 	private void calcCellWidth() {
