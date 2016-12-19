@@ -90,6 +90,15 @@ public class ConnectFourModel implements ConnectFourConstants {
 		return (board[row][col] != PLAYER_ONE && board[row][col] != PLAYER_TWO);
 	}
 	
+	public boolean columnIsFull(int col) {
+		for(int row = numRows() - 1; row >= 0; row--) {
+			if(isEmpty(row, col)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	public int checkWin() { // Returns player number who won, or NO_PLAYER if no one has won yet
 		int result = checkRows();
 		if(result == PLAYER_ONE || result == PLAYER_TWO) return result;
