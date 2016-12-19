@@ -24,14 +24,14 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		while(numValidMoves < model.numRows() * model.numCols()) {
 			int move = 0;
 			ConnectFourPlayer currentAI = ((currentPlayer == PLAYER_ONE) ? playerOneAI : playerTwoAI);
-			String currentPlayerString = (curretntPlayer == PLAYER_ONE) ? "1" : "2";
+			String currentPlayerString = (currentPlayer == PLAYER_ONE) ? "1" : "2";
 			if(currentAI == null) {
-				view.showMessage("Player " + currentPlayer + "'s turn. Click a button to make your move.");
+				view.showMessage("Player " + currentPlayerString + "'s turn. Click a button to make your move.");
 				move = view.getHumanMove();
 			} else {
 				int[][] board = model.getBoardCopy();
 				if(currentPlayer == PLAYER_TWO) ConnectFourModel.invertBoardState(board);
-				view.showMessage("Player " + currentPlayer + " is thinking...");
+				view.showMessage("Player " + currentPlayerString + " is thinking...");
 				move = currentAI.getMove(board);
 			}
 			model.makeMove(currentPlayer, move);
