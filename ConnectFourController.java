@@ -23,17 +23,19 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		int currentPlayer = PLAYER_ONE;
 		while(numValidMoves < model.numRows() * model.numCols()) {
 			int move = 0;
-			int error = false;
+			boolean error = false;
 			while(true) {
 				ConnectFourPlayer currentAI = ((currentPlayer == PLAYER_ONE) ? playerOneAI : playerTwoAI);
 				String currentPlayerString = (currentPlayer == PLAYER_ONE) ? "1" : "2";
 				if(currentAI == null) { // Human player
-					view.showMessage("Player " + currentPlayerString + "'s turn. Click a button to make your move.");
+					if(!error) view.showMessage("Player " + currentPlayerString + "'s turn. Click a button to make your move.");
+					else view.showMessage("Invalid move. Enter another move for player " + currentPlayerString + ".");
 					move = view.getHumanMove();
 				} else { // Computer player
 					int[][] board = model.getBoardCopy();
 					if(currentPlayer == PLAYER_TWO) ConnectFourModel.invertBoardState(board);
-					view.showMessage("Player " + currentPlayerString + " is thinking...");
+					if(!error) view.showMessage("Player " + currentPlayerString + " is thinking...");
+					else view.showMessage("AI for player " + currentPlayerString + " returned an invalid move!");
 					move = currentAI.getMove(board);
 				}
 				if(model.makeMove(currentPlayer, move)) {
