@@ -208,5 +208,18 @@ public class ConnectFourModel implements ConnectFourConstants {
 			}
 		}
 	}
+	
+	public int countTwos(int player) {
+		int count = 0;
+		for(int row = 0; row < numRows(); row++) {
+			for(int col = 0; col < numCols(); col++) {
+				
+			}
+		}
+	}
+	
+	public int countThrees(int player) {
+		
+	}
 }
 
