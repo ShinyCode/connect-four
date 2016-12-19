@@ -10,6 +10,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	private GOval[][] pieces;
 	private TouchButton[] buttons;
 	private GRect playerIndicator;
+	private GLabel msgLabel;
 	private boolean waitingForHumanMove = false;
 	private int humanMove = 0;
 	private double boardX = 0;
