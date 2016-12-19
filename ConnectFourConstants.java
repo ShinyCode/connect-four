@@ -22,4 +22,5 @@ public interface ConnectFourConstants {
 	public static final Color BOARD_COLOR = Color.BLUE;
 	public static final Color BUTTON_COLOR = Color.ORANGE;
 	public static final Color HOLE_COLOR = Color.WHITE;
+	public static final double INFOBAR_HEIGHT = 30;
 }
