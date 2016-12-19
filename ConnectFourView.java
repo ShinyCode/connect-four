@@ -177,7 +177,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	}
 	
 	public void showMessage(String msg) {
-		// TODO: Implement this
+		msgLabel.setLabel(msg);
 	}
 	
 	@Override
