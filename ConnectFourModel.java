@@ -66,7 +66,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 		if(moves.empty()) return false;
 		int lastMove = moves.pop();
 		for(int row = 0; row < numRows(); row++) {
-			if(board[row][lastMove] == PLAYER_ONE || board[row][lastMove] == PLAYER_TWO) {
+			if(!isEmpty(row, lastMove)) {
 				board[row][lastMove] = 0;
 				break;
 			}
