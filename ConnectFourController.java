@@ -43,11 +43,11 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	
 	private void determineWinner(int result) {
 		if(result == PLAYER_ONE) {
-			println("Player One was the winner!");
+			view.showMessage("Player One was the winner!");
 		} else if(result == PLAYER_TWO) {
-			println("Player Two was the winner!");
+			view.showMessage("Player Two was the winner!");
 		} else {
-			println("The game ended in a draw.");
+			view.showMessage("The game ended in a draw.");
 		}
 	}
 }
