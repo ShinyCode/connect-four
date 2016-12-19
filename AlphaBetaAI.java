@@ -8,6 +8,7 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 	private static final int DEFAULT_DEPTH = 3;
 	private int maxDepth;
 	private RandomGenerator rgen = RandomGenerator.getInstance();
+	private List<Integer> bestMoves;
 	
 	public AlphaBetaAI() {
 		maxDepth = DEFAULT_DEPTH;
@@ -20,14 +21,14 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 	
 	@Override
 	public int getMove(int[][] boardState) {
-		List<Integer> bestMoves = null;
+		bestMoves = null;
 		ConnectFourModel model = new ConnectFourModel(boardState);
-		alphaBeta(model, PLAYER_ONE, maxDepth, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, bestMoves);
+		alphaBeta(model, PLAYER_ONE, maxDepth, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);
 		if(bestMoves.isEmpty()) return NO_MOVE;
 		return bestMoves.get(rgen.nextInt(bestMoves.size()));
 	}
 	
-	private double alphaBeta(ConnectFourModel model, int player, int depth, double alpha, double beta, List<Integer> bestMoves) {
+	private double alphaBeta(ConnectFourModel model, int player, int depth, double alpha, double beta) {
 		if(model.isFull()) return 0.0;
 		int result = model.checkWin();
 		if(result == PLAYER_ONE) return Double.POSITIVE_INFINITY;
@@ -38,7 +39,7 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 			double value = Double.NEGATIVE_INFINITY;
 			for(int col = 0; col < model.numCols(); col++) {
 				if(!model.makeMove(player, col)) continue;
-				double newValue = alphaBeta(model, -player, depth, alpha, beta, bestMoves);
+				double newValue = alphaBeta(model, -player, depth, alpha, beta);
 				if(newValue > value) {
 					value = newValue;
 					if(depth == maxDepth) {
@@ -55,7 +56,7 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 			double value = Double.POSITIVE_INFINITY;
 			for(int col = 0; col < model.numCols(); col++) {
 				if(!model.makeMove(player, col)) continue;
-				double newValue = alphaBeta(model, -player, depth - 1, alpha, beta, bestMoves);
+				double newValue = alphaBeta(model, -player, depth - 1, alpha, beta);
 				if(newValue < value) value = newValue;
 				if(newValue < beta) beta = newValue;
 				model.undoMove();
