@@ -25,12 +25,12 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 		} else if (result == PLAYER_TWO) {
 			return Double.NEGATIVE_INFINITY;
 		}
-		if(depth == 0) return eval(boardState);
+		if(depth == 0) return eval(model);
 		if(player == PLAYER_ONE) {
 			double value = Double.NEGATIVE_INFINITY;
 			for(int col = 0; col < model.numCols(); col++) {
 				if(!model.makeMove(player, col)) continue;
-				double newValue = minimax(boardState, -player, depth);
+				double newValue = minimax(model, -player, depth);
 				if(newValue > value) value = newValue;
 				model.undoMove();
 			}
@@ -39,7 +39,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 			double value = Double.POSITIVE_INFINITY;
 			for(int col = 0; col < model.numCols(); col++) {
 				if(!model.makeMove(player, col)) continue;
-				double newValue = minimax(boardState, -player, depth - 1);
+				double newValue = minimax(model, -player, depth - 1);
 				if(newValue < value) value = newValue;
 				model.undoMove();
 			}
@@ -48,7 +48,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 		return 0.0;
 	}
 	
-	private double eval(int[][] boardState) {
+	private double eval(ConnectFourModel model) {
 		return 0.0;
 	}
 
