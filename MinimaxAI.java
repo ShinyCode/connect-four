@@ -1,6 +1,6 @@
 
 public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
-	private static final int DEFAULT_DEPTH = 5;
+	private static final int DEFAULT_DEPTH = 3;
 	private int maxDepth;
 	
 	public MinimaxAI() {
