@@ -39,18 +39,19 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	
 	public void addMove(int col) { // Blindly adds a move
 		if(col < 0 || col >= numCols()) return;
-		if(player != PLAYER_ONE && player != PLAYER_TWO) return;
 		for(int row = numRows() - 1; row >= 0; row--) {
 			if(pieces[row][col] != null) continue;
 			pieces[row][col] = new GOval(cellWidth - 2 * PIECE_MARGIN, cellWidth - 2 * PIECE_MARGIN);
 			GOval piece = pieces[row][col];
 			piece.setFilled(true);
-			if(player == PLAYER_ONE) {
+			if(currPlayer == PLAYER_ONE) {
 				piece.setFillColor(PLAYER_ONE_COLOR);
 			} else {
 				piece.setFillColor(PLAYER_TWO_COLOR);
 			}
 			add(piece, boardX + col * cellWidth + PIECE_MARGIN, boardY + row * cellWidth + PIECE_MARGIN);
+			currPlayer *= -1;
+			setIndicatorColor();
 			return;
 		}
 	}
@@ -124,8 +125,12 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		add(background);
 		playerIndicator = new GRect(INFOBAR_HEIGHT - 2 * INDICATOR_MARGIN, INFOBAR_HEIGHT - 2 * INDICATOR_MARGIN);
 		playerIndicator.setFilled(true);
-		playerIndicator.setFillColor(
+		setIndicatorColor();
 		add(playerIndicator, INDICATOR_MARGIN, barY + INDICATOR_MARGIN);
+	}
+	
+	private void setIndicatorColor() {
+		playerIndicator.setFillColor((currPlayer == PLAYER_ONE) ? PLAYER_ONE_COLOR : PLAYER_TWO_COLOR);
 	}
 	
 	private void calcCellWidth() {
