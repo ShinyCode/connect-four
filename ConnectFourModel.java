@@ -30,6 +30,10 @@ public class ConnectFourModel implements ConnectFourConstants {
 		}
 	}
 	
+	public boolean isFull() {
+		return numMoves == numRows() * numCols();
+	}
+	
 	public String toString() {
 		String result = "";
 		for(int row = 0; row < numRows(); row++) {
