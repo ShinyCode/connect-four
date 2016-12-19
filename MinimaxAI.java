@@ -16,7 +16,8 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 	public int getMove(int[][] boardState) {
 		ConnectFourModel model = new ConnectFourModel(boardState);
 		if(model.isFull()) return NO_MOVE;
-		double[] values = new double[model.numCols()];
+		double value = Double.POSITIVE_INFINITY;
+		double bestMove = NO_MOVE;
 		for(int col = 0; col < model.numCols(); col++)
 		return 0;
 	}
