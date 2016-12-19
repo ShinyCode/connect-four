@@ -142,6 +142,10 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		add(playerIndicator, INDICATOR_MARGIN, barY + INDICATOR_MARGIN);
 	}
 	
+	private void drawMsgLabel() {
+		
+	}
+	
 	private void setIndicatorColor() {
 		playerIndicator.setFillColor((currPlayer == PLAYER_ONE) ? PLAYER_ONE_COLOR : PLAYER_TWO_COLOR);
 	}
