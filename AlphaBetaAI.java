@@ -1,3 +1,5 @@
+import java.util.List;
+
 import acm.util.RandomGenerator;
 
 
@@ -21,28 +23,33 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 		return 0;
 	}
 	
-	private double alphaBeta(ConnectFourModel model, int player, int depth, double alpha, double beta) {
+	private double alphaBeta(ConnectFourModel model, int player, int depth, double alpha, double beta, List<Integer> bestMoves) {
 		if(model.isFull()) return 0.0;
 		int result = model.checkWin();
 		if(result == PLAYER_ONE) return Double.POSITIVE_INFINITY;
 		else if (result == PLAYER_TWO) return Double.NEGATIVE_INFINITY;
 		if(depth == 0) return eval(model);
 		if(player == PLAYER_ONE) {
+			if(depth == maxDepth) bestMoves = new ArrayList<Integer>();
 			double value = Double.NEGATIVE_INFINITY;
 			for(int col = 0; col < model.numCols(); col++) {
 				if(!model.makeMove(player, col)) continue;
-				double newValue = minimax(model, -player, depth);
+				double newValue = alphaBeta(model, -player, depth, alpha, beta, bestMoves);
 				if(newValue > value) value = newValue;
+				if(newValue > alpha) alpha = newValue;
 				model.undoMove();
+				if(alpha > beta) break;
 			}
 			return value;
 		} else if (player == PLAYER_TWO) {
 			double value = Double.POSITIVE_INFINITY;
 			for(int col = 0; col < model.numCols(); col++) {
 				if(!model.makeMove(player, col)) continue;
-				double newValue = minimax(model, -player, depth - 1);
+				double newValue = alphaBeta(model, -player, depth - 1, alpha, beta, bestMoves);
 				if(newValue < value) value = newValue;
+				if(newValue < beta) beta = newValue;
 				model.undoMove();
+				if(alpha > beta) break;
 			}
 			return value;
 		}
