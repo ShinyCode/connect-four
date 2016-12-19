@@ -20,7 +20,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 		for(int col = 0; col < model.numCols(); col++) {
 			if(!model.makeMove(PLAYER_ONE, col)) continue;
 			double newValue = minimax(model, PLAYER_TWO, maxDepth);
-			if(newValue > value) {
+			if(newValue >= value) {
 				value = newValue;
 				bestMove = col;
 			}
