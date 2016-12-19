@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 import acm.util.RandomGenerator;
@@ -35,7 +36,13 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 			for(int col = 0; col < model.numCols(); col++) {
 				if(!model.makeMove(player, col)) continue;
 				double newValue = alphaBeta(model, -player, depth, alpha, beta, bestMoves);
-				if(newValue > value) value = newValue;
+				if(newValue > value) {
+					value = newValue;
+					if(depth == maxDepth) {
+						bestMoves.clear();
+						bestMoves.add(col);
+					}
+				} else if(depth == maxDepth && newValue == value) bestMoves.add(col);
 				if(newValue > alpha) alpha = newValue;
 				model.undoMove();
 				if(alpha > beta) break;
