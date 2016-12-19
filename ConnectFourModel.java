@@ -28,7 +28,6 @@ public class ConnectFourModel implements ConnectFourConstants {
 				else break;
 			}
 		}
-		
 	}
 	
 	public String toString() {
