@@ -90,7 +90,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 		return (board[row][col] != PLAYER_ONE && board[row][col] != PLAYER_TWO);
 	}
 	
-	public boolean columnIsFull(int col) {
+	public boolean colIsFull(int col) {
 		for(int row = numRows() - 1; row >= 0; row--) {
 			if(isEmpty(row, col)) {
 				return false;
