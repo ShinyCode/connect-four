@@ -1,10 +1,11 @@
+import java.awt.event.ComponentEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import dashboard.control.*;
 import acm.graphics.*;
 
-public class ConnectFourView extends GCanvas implements ConnectFourConstants, MouseListener {
+public class ConnectFourView extends GCanvas implements ConnectFourConstants, MouseListener, ComponentListener {
 	private GOval[][] pieces;
 	private TouchButton[] buttons;
 	private GRect playerIndicator;
@@ -200,4 +201,9 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		if(o != null) e.translatePoint(-(int)o.getX(), -(int)o.getY());
 		if(o instanceof Control) ((Control) o).mouseReleased(e);
 	}
+	
+	public void componentHidden(ComponentEvent e) { }
+	public void componentMoved(ComponentEvent e) { }
+	public void componentResized(ComponentEvent e) { draw(); }
+	public void componentShown(ComponentEvent e) { }
 }
