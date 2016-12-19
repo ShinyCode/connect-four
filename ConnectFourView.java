@@ -22,6 +22,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		pieces = new GOval[DEFAULT_ROWS][DEFAULT_COLS];
 		buttons = new TouchButton[DEFAULT_COLS];
 		addMouseListener(this);
+		addComponentListener(this);
 	}
 	
 	public ConnectFourView(int numRows, int numCols) {
