@@ -24,13 +24,7 @@ public class RandomAI extends ConnectFourAI implements ConnectFourConstants {
 		ConnectFourModel model = new ConnectFourModel(boardState);
 		List<Integer> emptyCols = new ArrayList<Integer>();
 		for(int col = 0; col < model.numCols(); col++) {
-			for(int row = numRows - 1; row >= 0; row--) {
-				if(boardState[row][col] != PLAYER_ONE && boardState[row][col] != PLAYER_TWO) {
-					emptyCols.add(col);
-					break;
-				}
-			}
-			if(!model.columnIsFull(col))
+			if(!model.colIsFull(col)) emptyCols.add(col);
 		}
 		if(emptyCols.size() == 0) return NO_MOVE;
 		else return emptyCols.get(rgen.nextInt(emptyCols.size()));
