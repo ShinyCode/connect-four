@@ -25,7 +25,9 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 			int move = 0;
 			ConnectFourPlayer currentAI = ((currentPlayer == PLAYER_ONE) ? playerOneAI : playerTwoAI);
 			try {
-				currentAI.
+				int[][] board = model.getBoardCopy();
+				if(currentPlayer == PLAYER_TWO) ConnectFourModel.invertBoardState(board);
+				move = currentAI.getMove(board);
 			} catch(NullPointerException ex) {
 				move = view.getHumanMove();
 			}
