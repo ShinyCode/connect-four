@@ -25,4 +25,5 @@ public interface ConnectFourConstants {
 	public static final double INFOBAR_HEIGHT = 50;
 	public static final Color INFOBAR_COLOR = Color.BLUE;
 	public static final double INDICATOR_MARGIN = 10;
+	public static final Color TEXT_BACKGROUND_COLOR = Color.ORANGE;
 }
