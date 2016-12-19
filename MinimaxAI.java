@@ -63,8 +63,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 	}
 	
 	private double eval(ConnectFourModel model) {
-		int result = model.countThrees(PLAYER_ONE) - 2 * model.countThrees(PLAYER_TWO);
-		return result;
+		return model.countThrees(PLAYER_ONE) - 2 * model.countThrees(PLAYER_TWO);
 	}
 
 }
