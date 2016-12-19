@@ -25,6 +25,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 				value = newValue;
 				bestMove = col;
 			}
+			model.undoMove();
 		}
 		System.out.println("SEP");
 		return bestMove;
