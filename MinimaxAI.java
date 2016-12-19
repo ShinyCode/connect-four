@@ -24,7 +24,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 		if(result == PLAYER_ONE) {
 			return Double.POSITIVE_INFINITY;
 		} else if (result == PLAYER_TWO) {
-			
+			return Double.NEGATIVE_INFINITY;
 		}
 		return 0.0;
 	}
