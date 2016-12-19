@@ -40,6 +40,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 		}
 		if(depth == 0) return eval(model);
 		if(player == PLAYER_ONE) {
+			System.out.println("PLAYER_ONE");
 			double value = Double.NEGATIVE_INFINITY;
 			for(int col = 0; col < model.numCols(); col++) {
 				if(!model.makeMove(player, col)) continue;
@@ -49,6 +50,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 			}
 			return value;
 		} else if (player == PLAYER_TWO) {
+			System.out.println("PLAYER_TWO");
 			double value = Double.POSITIVE_INFINITY;
 			for(int col = 0; col < model.numCols(); col++) {
 				if(!model.makeMove(player, col)) continue;
