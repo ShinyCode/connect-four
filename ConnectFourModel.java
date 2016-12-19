@@ -62,7 +62,8 @@ public class ConnectFourModel implements ConnectFourConstants {
 		return moveHelper(player, col, false);
 	}
 	
-	public boolean undoMove() {
+	public boolean undoMove() { // Undoes the last move played. Returns whether there was a move to undo.
+		if(moves.empty()) return false;
 		
 	}
 	
