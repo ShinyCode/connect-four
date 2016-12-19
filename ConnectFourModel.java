@@ -64,7 +64,14 @@ public class ConnectFourModel implements ConnectFourConstants {
 	
 	public boolean undoMove() { // Undoes the last move played. Returns whether there was a move to undo.
 		if(moves.empty()) return false;
-		
+		int lastMove = moves.pop();
+		for(int row = 0; row < numRows(); row++) {
+			if(board[row][lastMove] == PLAYER_ONE || board[row][lastMove] == PLAYER_TWO) {
+				board[row][lastMove] = 0;
+				break;
+			}
+		}
+		return true;
 	}
 	
 	private boolean moveHelper(int player, int col, boolean makeMove) {
