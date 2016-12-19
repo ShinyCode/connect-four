@@ -39,7 +39,6 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 					view.addMove(move);
 					break;
 				}
-				view.showMessage("Invalid move. Enter another move for player " + currentPlayerString + ".");
 			}
 			int winner = model.checkWin();
 			if(winner == PLAYER_ONE || winner == PLAYER_TWO) return winner;
