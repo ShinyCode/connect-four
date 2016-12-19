@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 	private static final int DEFAULT_DEPTH = 3;
@@ -21,9 +24,12 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 			if(!model.makeMove(PLAYER_ONE, col)) continue;
 			double newValue = minimax(model, PLAYER_TWO, maxDepth);
 			System.out.println(newValue);
-			if(newValue >= value) {
+			if(newValue > value) {
 				value = newValue;
-				bestMove = col;
+				bestMoves.clear();
+				bestMoves.add(col);
+			} else if(newValue == value) {
+				bestMoves.add(col);
 			}
 			model.undoMove();
 		}
