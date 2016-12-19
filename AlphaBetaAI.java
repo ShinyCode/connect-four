@@ -6,6 +6,15 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 	private int maxDepth;
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 	
+	public AlphaBetaAI() {
+		maxDepth = DEFAULT_DEPTH;
+	}
+	
+	public AlphaBetaAI(int maxDepth) {
+		if(maxDepth <= 0) throw new IllegalArgumentException();
+		this.maxDepth = maxDepth;
+	}
+	
 	@Override
 	public int getMove(int[][] boardState) {
 		// TODO Auto-generated method stub
