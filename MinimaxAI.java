@@ -32,6 +32,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 		if(model.isFull()) return 0.0;
 		int result = model.checkWin();
 		if(result == PLAYER_ONE) {
+			System.out.println("Ret POS INF")
 			return Double.POSITIVE_INFINITY;
 		} else if (result == PLAYER_TWO) {
 			return Double.NEGATIVE_INFINITY;
