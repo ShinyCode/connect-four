@@ -20,6 +20,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 		for(int col = 0; col < model.numCols(); col++) {
 			if(!model.makeMove(PLAYER_ONE, col)) continue;
 			double newValue = minimax(model, PLAYER_TWO, maxDepth);
+			System.out.println(newValue);
 			if(newValue >= value) {
 				value = newValue;
 				bestMove = col;
@@ -32,7 +33,6 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 		if(model.isFull()) return 0.0;
 		int result = model.checkWin();
 		if(result == PLAYER_ONE) {
-			System.out.println("Ret POS INF")
 			return Double.POSITIVE_INFINITY;
 		} else if (result == PLAYER_TWO) {
 			return Double.NEGATIVE_INFINITY;
