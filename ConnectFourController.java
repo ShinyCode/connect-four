@@ -23,19 +23,24 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		int currentPlayer = PLAYER_ONE;
 		while(numValidMoves < model.numRows() * model.numCols()) {
 			int move = 0;
-			ConnectFourPlayer currentAI = ((currentPlayer == PLAYER_ONE) ? playerOneAI : playerTwoAI);
-			String currentPlayerString = (currentPlayer == PLAYER_ONE) ? "1" : "2";
-			if(currentAI == null) { // Human player
-				view.showMessage("Player " + currentPlayerString + "'s turn. Click a button to make your move.");
-				move = view.getHumanMove();
-			} else { // Computer player
-				int[][] board = model.getBoardCopy();
-				if(currentPlayer == PLAYER_TWO) ConnectFourModel.invertBoardState(board);
-				view.showMessage("Player " + currentPlayerString + " is thinking...");
-				move = currentAI.getMove(board);
+			while(true) {
+				ConnectFourPlayer currentAI = ((currentPlayer == PLAYER_ONE) ? playerOneAI : playerTwoAI);
+				String currentPlayerString = (currentPlayer == PLAYER_ONE) ? "1" : "2";
+				if(currentAI == null) { // Human player
+					view.showMessage("Player " + currentPlayerString + "'s turn. Click a button to make your move.");
+					move = view.getHumanMove();
+				} else { // Computer player
+					int[][] board = model.getBoardCopy();
+					if(currentPlayer == PLAYER_TWO) ConnectFourModel.invertBoardState(board);
+					view.showMessage("Player " + currentPlayerString + " is thinking...");
+					move = currentAI.getMove(board);
+				}
+				if(model.makeMove(currentPlayer, move)) {
+					view.addMove(move);
+					break;
+				}
+				view.showMessage("Invalid move. Enter another move for player " + currentPlayerString + ".");
 			}
-			model.makeMove(currentPlayer, move);
-			view.addMove(move);
 			int winner = model.checkWin();
 			if(winner == PLAYER_ONE || winner == PLAYER_TWO) return winner;
 			numValidMoves++;
