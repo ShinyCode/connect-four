@@ -20,8 +20,11 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 	
 	@Override
 	public int getMove(int[][] boardState) {
-		// TODO Auto-generated method stub
-		return 0;
+		List<Integer> bestMoves = null;
+		ConnectFourModel model = new ConnectFourModel(boardState);
+		alphaBeta(model, PLAYER_ONE, maxDepth, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, bestMoves);
+		if(bestMoves.isEmpty()) return NO_MOVE;
+		return bestMoves.get(rgen.nextInt(bestMoves.size()));
 	}
 	
 	private double alphaBeta(ConnectFourModel model, int player, int depth, double alpha, double beta, List<Integer> bestMoves) {
