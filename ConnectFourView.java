@@ -7,7 +7,7 @@ import acm.graphics.*;
 public class ConnectFourView extends GCanvas implements ConnectFourConstants, MouseListener {
 	private GOval[][] pieces;
 	private TouchButton[] buttons;
-	private GRect colorIndicator;
+	private GRect playerIndicator;
 	private boolean waitingForHumanMove = false;
 	private int humanMove = 0;
 	private double boardX = 0;
@@ -121,6 +121,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		background.setFilled(true);
 		background.setFillColor(INFOBAR_COLOR);
 		add(background);
+		
 	}
 	
 	private void calcCellWidth() {
