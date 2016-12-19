@@ -27,11 +27,11 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 			return Double.NEGATIVE_INFINITY;
 		}
 		if(depth == 0) return eval(boardState);
-		double[] values = new double[model.numCols()];
 		if(player == PLAYER_ONE) {
+			double value = Double.NEGATIVE_INFINITY;
 			
 		} else if (player == PLAYER_TWO) {
-			
+			double value = Double.POSITIVE_INFINITY;
 		}
 		return 0.0;
 	}
