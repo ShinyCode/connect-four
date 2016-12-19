@@ -12,7 +12,7 @@ public interface ConnectFourConstants {
 	public static final char EMPTY_SYMBOL = '-';
 	
 	public static final double BOARD_SIDE_MARGIN = 30;
-	public static final double BOARD_BOTTOM_MARGIN = 30;
+	public static final double BOARD_BOTTOM_MARGIN = 10;
 	public static final double BOARD_TOP_MARGIN = 0;
 	public static final double BUTTON_MARGIN = 10;
 	public static final double BUTTON_HEIGHT = 40;
@@ -22,6 +22,6 @@ public interface ConnectFourConstants {
 	public static final Color BOARD_COLOR = Color.BLUE;
 	public static final Color BUTTON_COLOR = Color.ORANGE;
 	public static final Color HOLE_COLOR = Color.WHITE;
-	public static final double INFOBAR_HEIGHT = 30;
+	public static final double INFOBAR_HEIGHT = 50;
 	public static final Color INFOBAR_COLOR = Color.BLUE;
 }
