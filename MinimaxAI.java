@@ -26,7 +26,6 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 		for(int col = 0; col < model.numCols(); col++) {
 			if(!model.makeMove(PLAYER_ONE, col)) continue;
 			double newValue = minimax(model, PLAYER_TWO, maxDepth);
-			System.out.println(newValue);
 			if(newValue > value) {
 				value = newValue;
 				bestMoves.clear();
@@ -36,7 +35,6 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 			}
 			model.undoMove();
 		}
-		System.out.println("SEP");
 		return bestMoves.get(rgen.nextInt(bestMoves.size()));
 	}
 	
