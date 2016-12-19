@@ -60,7 +60,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 	}
 	
 	private double eval(ConnectFourModel model) {
-		return 0.0;
+		return Double.NEGATIVE_INFINITY;
 	}
 
 }
