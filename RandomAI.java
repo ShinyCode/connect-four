@@ -26,7 +26,7 @@ public class RandomAI extends ConnectFourAI implements ConnectFourConstants {
 		for(int col = 0; col < model.numCols(); col++) {
 			if(!model.colIsFull(col)) emptyCols.add(col);
 		}
-		if(emptyCols.size() == 0) return NO_MOVE;
+		if(emptyCols.isEmpty()) return NO_MOVE;
 		else return emptyCols.get(rgen.nextInt(emptyCols.size()));
 	}
 
