@@ -67,7 +67,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 		int lastMove = moves.pop();
 		for(int row = 0; row < numRows(); row++) {
 			if(!isEmpty(row, lastMove)) {
-				board[row][lastMove] = 0;
+				board[row][lastMove] = NO_PLAYER;
 				break;
 			}
 		}
@@ -99,7 +99,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 		if(result == PLAYER_ONE || result == PLAYER_TWO) return result;
 		result = checkTRDiags();
 		if(result == PLAYER_ONE || result == PLAYER_TWO) return result;
-		return 0;
+		return NO_PLAYER;
 	}
 	
 	private int checkRows() {
@@ -114,7 +114,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 				if(result == PLAYER_ONE || result == PLAYER_TWO) return result;
 			}
 		}
-		return 0;
+		return NO_PLAYER;
 	}
 	
 	private int checkCols() {
@@ -129,7 +129,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 				if(result == PLAYER_ONE || result == PLAYER_TWO) return result;
 			}
 		}
-		return 0;
+		return NO_PLAYER;
 	}
 	
 	private int checkTLDiags() {
@@ -144,7 +144,7 @@ public class ConnectFourModel implements ConnectFourConstants {
 				if(result == PLAYER_ONE || result == PLAYER_TWO) return result;
 			}
 		}
-		return 0;
+		return NO_PLAYER;
 	}
 	
 	private int checkTRDiags() {
@@ -159,15 +159,15 @@ public class ConnectFourModel implements ConnectFourConstants {
 				if(result == PLAYER_ONE || result == PLAYER_TWO) return result;
 			}
 		}
-		return 0;
+		return NO_PLAYER;
 	}
 	
 	private int allEqual(int[] values) {
-		if(values.length == 0) return 0;
+		if(values.length == 0) return NO_PLAYER;
 		int probeValue = values[0];
-		if(probeValue != PLAYER_ONE && probeValue != PLAYER_TWO) return 0;
+		if(probeValue != PLAYER_ONE && probeValue != PLAYER_TWO) return NO_PLAYER;
 		for(int i = 1; i < values.length; i++) {
-			if(values[i] != probeValue) return 0;
+			if(values[i] != probeValue) return NO_PLAYER;
 		}
 		return probeValue;
 	}
