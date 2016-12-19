@@ -68,7 +68,6 @@ public class ConnectFourModel implements ConnectFourConstants {
 		for(int row = 0; row < numRows(); row++) {
 			if(!isEmpty(row, lastMove)) {
 				board[row][lastMove] = NO_PLAYER;
-				System.out.println("UNDO " + row + " " + lastMove);
 				break;
 			}
 		}
