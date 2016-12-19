@@ -207,7 +207,8 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	public void componentHidden(ComponentEvent e) { }
 	public void componentMoved(ComponentEvent e) { }
 	public void componentResized(ComponentEvent e) { 
-		draw(); 
+		draw();
+		System.out.println("Fired");
 	}
 	public void componentShown(ComponentEvent e) { }
 }
