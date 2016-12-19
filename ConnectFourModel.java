@@ -1,6 +1,7 @@
 
 public class ConnectFourModel implements ConnectFourConstants {
 	private int[][] board;
+	private Stack<Integer> moves;
 	
 	public ConnectFourModel() {
 		board = new int[DEFAULT_ROWS][DEFAULT_COLS];
