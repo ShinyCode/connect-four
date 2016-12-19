@@ -143,6 +143,10 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	}
 	
 	private void drawMsgLabel() {
+		if(msgLabel == null) msgLabel = new GLabel("HEY");
+		add(msgLabel, INFOBAR_HEIGHT + INDICATOR_MARGIN + MESSAGE_MARGIN, barY + INDICATOR_MARGIN);
+		
+		
 		
 	}
 	
