@@ -88,7 +88,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 				GOval hole = new GOval(cellWidth - 2 * PIECE_MARGIN, cellWidth - 2 * PIECE_MARGIN);
 				hole.setFilled(true);
 				hole.setFillColor(HOLE_COLOR);
-				add(phole, boardX + col * cellWidth + PIECE_MARGIN, boardY + row * cellWidth + PIECE_MARGIN);
+				add(hole, boardX + col * cellWidth + PIECE_MARGIN, boardY + row * cellWidth + PIECE_MARGIN);
 			}
 		}
 	}
