@@ -14,12 +14,11 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 	
 	@Override
 	public int getMove(int[][] boardState) {
-		
+		ConnectFourModel model = new ConnectFourModel(boardState);
 		return 0;
 	}
 	
-	private double minimax(int[][] boardState, int player, int depth) {
-		ConnectFourModel model = new ConnectFourModel(boardState);
+	private double minimax(ConnectFourModel model, int player, int depth) {
 		int result = model.checkWin();
 		if(result == PLAYER_ONE) {
 			return Double.POSITIVE_INFINITY;
