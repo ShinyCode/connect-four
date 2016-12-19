@@ -15,6 +15,8 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 	@Override
 	public int getMove(int[][] boardState) {
 		ConnectFourModel model = new ConnectFourModel(boardState);
+		double[] values = new double[model.numCols()];
+		
 		return 0;
 	}
 	
