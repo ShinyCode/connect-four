@@ -1,3 +1,4 @@
+package src;
 
 import java.awt.Dimension;
 
@@ -177,5 +178,16 @@ public class ConnectFour extends Program implements ConnectFourConstants {
 	private void printIntro() {
 		println("Welcome to Connect 4!");
 		println();
+	}
+	
+	/**
+	 * main method to allow exporting as Runnable JAR
+	 * 
+	 * @param args command line arguments
+	 */
+	public static void main(String[] args)
+	{
+		ConnectFour program = new ConnectFour();
+		program.start();
 	}
 }

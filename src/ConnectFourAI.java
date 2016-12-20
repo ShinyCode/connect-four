@@ -1,3 +1,4 @@
+package src;
 
 /**
  * Abstract class representing an AI for ConnectFour.
