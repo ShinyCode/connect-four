@@ -30,10 +30,18 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 	 */
 	private List<Integer> bestMoves;
 	
+	/**
+	 * Creates an AlphaBetaAI that searches to the default depth.
+	 */
 	public AlphaBetaAI() {
 		maxDepth = DEFAULT_DEPTH;
 	}
 	
+	/**
+	 * Creates a AlphaBetaAI that searches to the specified maximum depth.
+	 * 
+	 * @param maxDepth the maximum depth to search
+	 */
 	public AlphaBetaAI(int maxDepth) {
 		if(maxDepth <= 0) throw new IllegalArgumentException();
 		this.maxDepth = maxDepth;
