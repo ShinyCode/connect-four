@@ -6,6 +6,12 @@ import java.awt.event.MouseListener;
 import dashboard.control.*;
 import acm.graphics.*;
 
+/**
+ * 
+ * 
+ * @author Mark Sabini
+ *
+ */
 public class ConnectFourView extends GCanvas implements ConnectFourConstants, MouseListener, ComponentListener {
 	private GOval[][] pieces;
 	private TouchButton[] buttons;
