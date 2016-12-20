@@ -18,6 +18,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	}
 	
 	public void run() {
+		printIntro();
 		while(true) {
 			model = new ConnectFourModel(DEFAULT_ROWS, DEFAULT_COLS);
 			view.draw();
