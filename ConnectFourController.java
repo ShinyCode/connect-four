@@ -20,9 +20,21 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	
 	public void run() {
 		view.draw();
-		println("Playing game...");
 		int result = playGame(new AlphaBetaAI(3), new AlphaBetaAI(3));
 		determineWinner(result);
+	}
+	
+	private ConnectFourAI getAIFromConsole(int player) {
+		int aiNumber = 0;
+		while(true) {
+			String playerString = (player == PLAYER_ONE) ? "1" : "2";
+			println("Please choose an AI for Player " + playerString + ":");
+			println("(0) Human (1) Random (2) Simple (3) Minimax (4) AlphaBeta");
+			aiNumber = readInt(">> ");
+			if(aiNumber >= 0 && aiNumber < NUM_AIS) break;
+			print("Invalid choice. ");
+		}
+		return null;
 	}
 	
 	private int playGame(ConnectFourAI playerOneAI, ConnectFourAI playerTwoAI) { // null indicates human
