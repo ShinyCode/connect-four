@@ -1,0 +1,15 @@
+/BlankClass.class
+/ConnectFourModel.class
+/ConnectFourConstants.class
+/ConnectFourController.class
+/ConnectFourPlayer.class
+/HumanPlayer.class
+/ConnectFourView.class
+/ConnectFourView$1.class
+/ConnectFourAI.class
+/RandomAI.class
+/SimpleAI.class
+/MinimaxAI.class
+/AlphaBetaAI.class
+/ConnectFourPresenter.class
+/ConnectFour.class
