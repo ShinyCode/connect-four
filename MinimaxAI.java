@@ -21,7 +21,7 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 	private int maxDepth;
 	
 	/**
-	 * Random generator for move selection
+	 * Random generator for equally-good move selection
 	 */
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 	
