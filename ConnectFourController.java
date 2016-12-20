@@ -4,7 +4,6 @@ import acm.program.*;
 public class ConnectFourController extends Program implements ConnectFourConstants {
 	private ConnectFourModel model;
 	private ConnectFourView view;
-	private int numValidMoves;
 	
 	public void init() {
 		model = new ConnectFourModel(DEFAULT_ROWS, DEFAULT_COLS);
@@ -14,12 +13,12 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	
 	public void run() {
 		view.draw();
-		numValidMoves = 0;
 		int result = playGame(new MinimaxAI(3), new AlphaBetaAI(4));
 		determineWinner(result);
 	}
 	
 	private int playGame(ConnectFourAI playerOneAI, ConnectFourAI playerTwoAI) { // null indicates human
+		int numValidMoves = 0;
 		int currentPlayer = PLAYER_ONE;
 		while(numValidMoves < model.numRows() * model.numCols()) {
 			int move = 0;
