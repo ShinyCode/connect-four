@@ -69,7 +69,7 @@ public class ConnectFour extends Program implements ConnectFourConstants {
 			print("Invalid choice. ");
 		}
 		switch(aiNumber) {
-			case 0: return null;
+			case 0: return null; // null is used to symbolize choosing a human player
 			case 1: return new RandomAI();
 			case 2: return new SimpleAI();
 			case 3: return new MinimaxAI(getAIDepth());
@@ -78,6 +78,13 @@ public class ConnectFour extends Program implements ConnectFourConstants {
 		}
 	}
 	
+	/**
+	 * Prompts the user to enter a depth for use in MinimaxAI or AlphaBetaAI.
+	 * The depth typed by the user must be positive, otherwise the user
+	 * will be prompted to enter another value.
+	 * 
+	 * @return the depth for MinimaxAI or AlphaBetaAI
+	 */
 	private int getAIDepth() {
 		int depth = 0;
 		while(true) {
@@ -89,6 +96,11 @@ public class ConnectFour extends Program implements ConnectFourConstants {
 		return depth;
 	}
 	
+	/**
+	 * Asks the user whether another game should be played.
+	 * 
+	 * @return whether another game should be played
+	 */
 	private boolean askForReplay() {
 		while(true) {
 			println("Would you like to play again? (Y/N)");
@@ -99,6 +111,13 @@ public class ConnectFour extends Program implements ConnectFourConstants {
 		}
 	}
 	
+	/**
+	 * Plays a game between the two specified AIs.
+	 * 
+	 * @param playerOneAI the AI for PLAYER_ONE, null for a human player
+	 * @param playerTwoAI the AI for PLAYER_TWO, null for a human player
+	 * @return the winner, either PLAYER_ONE, PLAYER_TWO, or NO_PLAYER
+	 */
 	private int playGame(ConnectFourAI playerOneAI, ConnectFourAI playerTwoAI) { // null indicates human
 		int numValidMoves = 0;
 		int currentPlayer = PLAYER_ONE;
