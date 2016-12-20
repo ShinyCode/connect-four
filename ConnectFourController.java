@@ -13,7 +13,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	
 	public void run() {
 		view.draw();
-		int result = playGame(null, new AlphaBetaAI(3));
+		int result = playGame(new AlphaBetaAI(3), new AlphaBetaAI(3));
 		determineWinner(result);
 	}
 	
