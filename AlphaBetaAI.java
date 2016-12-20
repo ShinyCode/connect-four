@@ -10,9 +10,24 @@ import acm.util.RandomGenerator;
  *
  */
 public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
+	/**
+	 * The default search depth to use
+	 */
 	private static final int DEFAULT_DEPTH = 3;
+	
+	/**
+	 * The maximum search depth for the AI
+	 */
 	private int maxDepth;
+	
+	/**
+	 * Random generator for equally-good move selection
+	 */
 	private RandomGenerator rgen = RandomGenerator.getInstance();
+	
+	/**
+	 * A list of the best moves to take from the starting state
+	 */
 	private List<Integer> bestMoves;
 	
 	public AlphaBetaAI() {
