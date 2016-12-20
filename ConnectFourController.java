@@ -26,6 +26,9 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		int result = playGame(playerOneAI, playerTwoAI);
 		println("...finished game.");
 		determineWinner(result);
+		readLine();
+		view.reset();
+		
 	}
 	
 	private ConnectFourAI getAIFromConsole(int player) {
