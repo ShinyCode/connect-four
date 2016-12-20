@@ -9,7 +9,6 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	private ConnectFourView view;
 	
 	public void init() {
-		model = new ConnectFourModel(DEFAULT_ROWS, DEFAULT_COLS);
 		view = new ConnectFourView(DEFAULT_ROWS, DEFAULT_COLS);
 		add(view, CENTER);
 		IOConsole console = new IOConsole();
@@ -20,6 +19,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	
 	public void run() {
 		while(true) {
+			model = new ConnectFourModel(DEFAULT_ROWS, DEFAULT_COLS);
 			view.draw();
 			ConnectFourAI playerOneAI = getAIFromConsole(PLAYER_ONE);
 			ConnectFourAI playerTwoAI = getAIFromConsole(PLAYER_TWO);
