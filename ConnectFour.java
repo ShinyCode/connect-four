@@ -152,6 +152,12 @@ public class ConnectFour extends Program implements ConnectFourConstants {
 		return NO_PLAYER;
 	}
 	
+	/**
+	 * Given the result of a game, outputs the appropriate message
+	 * to both the console and the view.
+	 * 
+	 * @param result the winner, either PLAYER_ONE, PLAYER_TWO, or NO_PLAYER
+	 */
 	private void determineWinner(int result) {
 		if(result == PLAYER_ONE) {
 			view.showMessage("Player 1 was the winner!");
@@ -165,6 +171,9 @@ public class ConnectFour extends Program implements ConnectFourConstants {
 		}
 	}
 
+	/**
+	 * Prints a short welcome message to the console.
+	 */
 	private void printIntro() {
 		println("Welcome to Connect 4!");
 		println();
