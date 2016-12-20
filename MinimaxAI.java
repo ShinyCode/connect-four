@@ -98,6 +98,13 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 		return 0.0;
 	}
 	
+	/**
+	 * A basic static evaluation function that looks at three-in-a-row occurrences,
+	 * and acts defensively to stop the adversary from accumulating three-in-a-rows.
+	 * 
+	 * @param model the current state to evaluate
+	 * @return a measure of how good the state is
+	 */
 	private double eval(ConnectFourModel model) {
 		return model.countThrees(PLAYER_ONE) - 2 * model.countThrees(PLAYER_TWO);
 	}
