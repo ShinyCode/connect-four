@@ -34,7 +34,25 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 			if(aiNumber >= 0 && aiNumber < NUM_AIS) break;
 			print("Invalid choice. ");
 		}
-		return null;
+		switch(aiNumber) {
+			case 0: return null;
+			case 1: return new RandomAI();
+			case 2: return new SimpleAI();
+			case 3:
+			case 4:
+			default: return null;
+		}
+	}
+	
+	private int getAIDepth() {
+		int depth = 0;
+		while(true) {
+			println("Please enter the search depth. (Depth must be positive)");
+			depth = readInt(">> ");
+			if(depth > 0) break;
+			print("Invalid depth. ");
+		}
+		return depth;
 	}
 	
 	private int playGame(ConnectFourAI playerOneAI, ConnectFourAI playerTwoAI) { // null indicates human
