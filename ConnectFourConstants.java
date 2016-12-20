@@ -32,4 +32,5 @@ public interface ConnectFourConstants {
 	public static final double MESSAGE_MARGIN = 10;
 	public static final int APP_WIDTH = 900;
 	public static final int APP_HEIGHT = 500;
+	public static final int NUM_AIS = 5;
 }
