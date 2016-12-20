@@ -124,5 +124,6 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 
 	private void printIntro() {
 		println("Welcome to Connect 4!");
+		println("Programmed by Mark Sabini to exercise the MVC pattern and basic AI techniques.");
 	}
 }
