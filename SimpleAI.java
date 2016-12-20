@@ -3,7 +3,13 @@ import java.util.List;
 
 import acm.util.RandomGenerator;
 
-
+/**
+ * Implements a ConnectFourAI that responds to occurences of near-wins/losses
+ * (3 in a row for NUM_IN_A_ROW = 4), but otherwise plays randomly.
+ * 
+ * @author Mark Sabini
+ *
+ */
 public class SimpleAI extends ConnectFourAI implements ConnectFourConstants {
 	private int delay;
 	private RandomGenerator rgen = RandomGenerator.getInstance();
