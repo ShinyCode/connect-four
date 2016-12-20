@@ -4,7 +4,18 @@ import java.awt.Dimension;
 import acm.io.IOConsole;
 import acm.program.*;
 
+/**
+ * Plays a game of ConnectFour. For each player, the user can specify
+ * the AI to use (Human, Random, Simple, Minimax, AlphaBeta), as well as
+ * any parameters specific to the AI itself. 
+ * 
+ * @author Mark Sabini
+ *
+ */
 public class ConnectFour extends Program implements ConnectFourConstants {
+	/**
+	 * Model containing all the data pertaining to the current game
+	 */
 	private ConnectFourModel model;
 	private ConnectFourView view;
 	
