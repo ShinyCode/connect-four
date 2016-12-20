@@ -49,6 +49,7 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 				} else if(depth == maxDepth && newValue == value) bestMoves.add(col);
 				if(newValue > alpha) alpha = newValue;
 				model.undoMove();
+				if(alpha > beta) System.out.println("PRUNE");
 				if(alpha > beta) break;
 			}
 			return value;
@@ -60,6 +61,7 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 				if(newValue < value) value = newValue;
 				if(newValue < beta) beta = newValue;
 				model.undoMove();
+				if(alpha > beta) System.out.println("PRUNE");
 				if(alpha > beta) break;
 			}
 			return value;
