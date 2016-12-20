@@ -124,7 +124,6 @@ public class ConnectFourPresenter extends Program implements ConnectFourConstant
 
 	private void printIntro() {
 		println("Welcome to Connect 4!");
-		println("Programmed by Mark Sabini to exercise the MVP pattern and basic AI techniques.");
 		println();
 	}
 }
