@@ -1,4 +1,6 @@
 
+import java.awt.Dimension;
+
 import acm.io.IOConsole;
 import acm.program.*;
 
@@ -10,6 +12,9 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		model = new ConnectFourModel(DEFAULT_ROWS, DEFAULT_COLS);
 		view = new ConnectFourView(DEFAULT_ROWS, DEFAULT_COLS);
 		add(view, CENTER);
+		IOConsole console = new IOConsole();
+		console.setMinimumSize(new Dimension(200, 200));
+		add(console, SOUTH);
 	}
 	
 	public void run() {
