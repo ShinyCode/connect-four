@@ -149,7 +149,7 @@ public class ConnectFour extends Program implements ConnectFourConstants {
 			numValidMoves++;
 			currentPlayer *= -1;
 		}
-		return 0;
+		return NO_PLAYER;
 	}
 	
 	private void determineWinner(int result) {
