@@ -56,6 +56,15 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 		return bestMoves.get(rgen.nextInt(bestMoves.size()));
 	}
 	
+	/**
+	 * 
+	 * @param model
+	 * @param player
+	 * @param depth
+	 * @param alpha
+	 * @param beta
+	 * @return
+	 */
 	private double alphaBeta(ConnectFourModel model, int player, int depth, double alpha, double beta) {
 		if(model.isFull()) return 0.0;
 		int result = model.checkWin();
