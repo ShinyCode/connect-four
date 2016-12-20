@@ -20,7 +20,11 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	
 	public void run() {
 		view.draw();
-		int result = playGame(new AlphaBetaAI(3), new AlphaBetaAI(3));
+		ConnectFourAI playerOneAI = getAIFromConsole(PLAYER_ONE);
+		ConnectFourAI playerTwoAI = getAIFromConsole(PLAYER_TWO);
+		println("Running game...");
+		int result = playGame(playerOneAI, playerTwoAI);
+		println("...finished game.");
 		determineWinner(result);
 	}
 	
@@ -38,8 +42,8 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 			case 0: return null;
 			case 1: return new RandomAI();
 			case 2: return new SimpleAI();
-			case 3:
-			case 4:
+			case 3: return new MinimaxAI(getAIDepth());
+			case 4: return new AlphaBetaAI(getAIDepth());
 			default: return null;
 		}
 	}
@@ -91,11 +95,14 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	
 	private void determineWinner(int result) {
 		if(result == PLAYER_ONE) {
-			view.showMessage("Player One was the winner!");
+			view.showMessage("Player 1 was the winner!");
+			println("Player 1 was the winner!");
 		} else if(result == PLAYER_TWO) {
-			view.showMessage("Player Two was the winner!");
+			view.showMessage("Player 2 was the winner!");
+			println("Player 2 was the winner!");
 		} else {
 			view.showMessage("The game ended in a draw.");
+			println("The game ended in a draw.");
 		}
 	}
 }
