@@ -120,4 +120,8 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 			println("The game ended in a draw.");
 		}
 	}
+
+	private void printIntro() {
+		println("Welcome to Connect 4!");
+	}
 }
