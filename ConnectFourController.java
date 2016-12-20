@@ -13,7 +13,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		view = new ConnectFourView(DEFAULT_ROWS, DEFAULT_COLS);
 		add(view, CENTER);
 		IOConsole console = new IOConsole();
-		console.setMinimumSize(new Dimension(200, 200));
+		console.setPreferredSize(new Dimension(200, 200));
 		add(console, SOUTH);
 	}
 	
