@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import acm.io.IOConsole;
 import acm.program.*;
 
-public class ConnectFourController extends Program implements ConnectFourConstants {
+public class ConnectFourPresenter extends Program implements ConnectFourConstants {
 	private ConnectFourModel model;
 	private ConnectFourView view;
 	
