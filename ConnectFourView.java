@@ -186,6 +186,9 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		msgLabel.setLabel(msg);
 	}
 	
+	// Implements the MouseListener interface. These are pulled from the dashboard library,
+	// to enable buttons to work
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		GObject o = getElementAt(e.getX(), e.getY());
@@ -220,6 +223,8 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		if(o != null) e.translatePoint(-(int)o.getX(), -(int)o.getY());
 		if(o instanceof Control) ((Control) o).mouseReleased(e);
 	}
+	
+	// Implements the ComponentListener interface
 	
 	@Override
 	public void componentHidden(ComponentEvent e) { }
