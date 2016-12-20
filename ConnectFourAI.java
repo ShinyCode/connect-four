@@ -13,5 +13,5 @@ public abstract class ConnectFourAI {
 	 * @param boardState the current board state. PLAYER_ONE is always the AI, and PLAYER_TWO is always the adversary.
 	 * @return a move, where 0 <= move < numCols, or NO_MOVE
 	 */
-	public abstract int getMove(int[][] boardState); // Here, 1 is the player, -1 is the adversary
+	public abstract int getMove(int[][] boardState);
 }
