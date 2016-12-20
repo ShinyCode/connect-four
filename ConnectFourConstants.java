@@ -1,7 +1,14 @@
 import java.awt.Color;
 
-
+/**
+ * This interface exports constants that are shared across the different
+ * classes. 
+ * 
+ * @author Mark Sabini
+ *
+ */
 public interface ConnectFourConstants {
+	// Model Constants
 	public static final int DEFAULT_ROWS = 6;
 	public static final int DEFAULT_COLS = 7;
 	public static final int NUM_IN_A_ROW = 4;
@@ -13,6 +20,7 @@ public interface ConnectFourConstants {
 	public static final char EMPTY_SYMBOL = '-';
 	public static final int NO_MOVE = -1;
 	
+	// View Constants
 	public static final double BOARD_SIDE_MARGIN = 30;
 	public static final double BOARD_BOTTOM_MARGIN = 10;
 	public static final double BOARD_TOP_MARGIN = 0;
