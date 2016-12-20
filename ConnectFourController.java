@@ -10,10 +10,11 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		model = new ConnectFourModel(DEFAULT_ROWS, DEFAULT_COLS);
 		view = new ConnectFourView(DEFAULT_ROWS, DEFAULT_COLS);
 		//add(new IOConsole(), EAST);
+		add(view, CENTER);
 	}
 	
 	public void run() {
-		add(view, CENTER);
+
 		view.draw();
 		int result = playGame(new AlphaBetaAI(3), new AlphaBetaAI(3));
 		determineWinner(result);
