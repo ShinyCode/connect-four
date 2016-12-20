@@ -58,6 +58,7 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 	
 	/**
 	 * 
+	 * 
 	 * @param model
 	 * @param player
 	 * @param depth
