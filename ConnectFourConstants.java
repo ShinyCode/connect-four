@@ -31,5 +31,5 @@ public interface ConnectFourConstants {
 	public static final String MESSAGE_FONT = "*-*-15";
 	public static final double MESSAGE_MARGIN = 10;
 	public static final int APP_WIDTH = 800;
-	public static final int APP_HEIGHT = 400;
+	public static final int APP_HEIGHT = 600;
 }
