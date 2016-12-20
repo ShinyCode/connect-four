@@ -105,6 +105,7 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 		return 0.0;
 	}
 	
+	
 	private double eval(ConnectFourModel model) {
 		return model.countThrees(PLAYER_ONE) - 2 * model.countThrees(PLAYER_TWO);
 	}
