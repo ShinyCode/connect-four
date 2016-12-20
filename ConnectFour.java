@@ -17,8 +17,13 @@ public class ConnectFour extends Program implements ConnectFourConstants {
 	 * Model containing all the data pertaining to the current game
 	 */
 	private ConnectFourModel model;
+	
+	/**
+	 * View displaying a graphical depiction of the board
+	 */
 	private ConnectFourView view;
 	
+	@Override
 	public void init() {
 		view = new ConnectFourView(DEFAULT_ROWS, DEFAULT_COLS);
 		add(view, CENTER);
@@ -28,6 +33,7 @@ public class ConnectFour extends Program implements ConnectFourConstants {
 		setSize(new Dimension(APP_WIDTH, APP_HEIGHT));
 	}
 	
+	@Override
 	public void run() {
 		printIntro();
 		while(true) {
