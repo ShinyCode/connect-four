@@ -15,6 +15,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		IOConsole console = new IOConsole();
 		setConsole(console);
 		add(console, CENTER);
+		setSize(new Dimension(APP_WIDTH, APP_HEIGHT));
 	}
 	
 	public void run() {
