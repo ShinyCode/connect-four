@@ -62,6 +62,16 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		return depth;
 	}
 	
+	private boolean askForReplay() {
+		while(true) {
+			println("Would you like to play again? (Y/N)");
+			String answer = readLine(">> ").toLowerCase();
+			if(answer.equals("y") || answer.equals("yes")) return true;
+			if(answer.equals("n") || answer.equals("no")) return false;
+			print("Invalid input. ");
+		}
+	}
+	
 	private int playGame(ConnectFourAI playerOneAI, ConnectFourAI playerTwoAI) { // null indicates human
 		int numValidMoves = 0;
 		int currentPlayer = PLAYER_ONE;
