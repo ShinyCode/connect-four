@@ -9,7 +9,6 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	public void init() {
 		model = new ConnectFourModel(DEFAULT_ROWS, DEFAULT_COLS);
 		view = new ConnectFourView(DEFAULT_ROWS, DEFAULT_COLS);
-		add(new IOConsole(), CENTER);
 		add(view, CENTER);
 	}
 	
