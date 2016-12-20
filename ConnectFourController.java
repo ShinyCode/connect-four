@@ -10,7 +10,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		model = new ConnectFourModel(DEFAULT_ROWS, DEFAULT_COLS);
 		view = new ConnectFourView(DEFAULT_ROWS, DEFAULT_COLS);
 		add(view, CENTER);
-		add(new IOConsole(), SOUTH);
+		add(new IOConsole(), EAST);
 	}
 	
 	public void run() {
