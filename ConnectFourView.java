@@ -60,6 +60,13 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		}
 	}
 	
+	public void reset() {
+		currPlayer = PLAYER_ONE;
+		pieces = new GOval[DEFAULT_ROWS][DEFAULT_COLS];
+		buttons = new TouchButton[DEFAULT_COLS];
+		draw();
+	}
+	
 	public void draw() {
 		removeAll();
 		calcCellWidth();
