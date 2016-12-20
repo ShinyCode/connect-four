@@ -22,7 +22,7 @@ public class SimpleAI extends ConnectFourAI implements ConnectFourConstants {
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 	
 	/**
-	 * Creates a RandomAI with no delay (so the AI begins working immediately)
+	 * Creates a SimpleAI with no delay (so the AI begins working immediately)
 	 */
 	public SimpleAI() {
 		delay = 0;
