@@ -92,6 +92,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	
 	/**
 	 * Returns the number of rows in the depicted board
+	 * 
 	 * @return the number of rows in the depicted board
 	 */
 	public int numRows() {
@@ -100,6 +101,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 	
 	/**
 	 * Returns the number of columns in the depicted board
+	 * 
 	 * @return the number of columns in the depicted board
 	 */
 	public int numCols() {
@@ -107,7 +109,12 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		return 0;
 	}
 	
-	public void addMove(int col) { // Blindly adds a move
+	/**
+	 * Blindly adds a move to the board at the given column.
+	 * 
+	 * @param col the column at which to make the move
+	 */
+	public void addMove(int col) {
 		if(col < 0 || col >= numCols()) return;
 		for(int row = numRows() - 1; row >= 0; row--) {
 			if(pieces[row][col] != null) continue;
@@ -126,6 +133,9 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		}
 	}
 	
+	/**
+	 * Resets the ConnectFourView to its original state.
+	 */
 	public void reset() {
 		currPlayer = PLAYER_ONE;
 		pieces = new GOval[DEFAULT_ROWS][DEFAULT_COLS];
@@ -134,6 +144,11 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		draw();
 	}
 	
+	/**
+	 * Clears the ConnectFourView and draws its representation. This is called
+	 * once from ConnectFour after the board is created, and also when the window
+	 * is resized.
+	 */
 	public void draw() {
 		removeAll();
 		calcCellWidth();
@@ -146,6 +161,9 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		drawMsgLabel();
 	}
 	
+	/**
+	 * Draws the buttons used by human players to input moves.
+	 */
 	private void drawButtons() {
 		for(int col = 0; col < buttons.length; col++) {
 			buttons[col] = new TouchButton(cellWidth - 2 * BUTTON_MARGIN, BUTTON_HEIGHT, BUTTON_COLOR, Integer.toString(col));
@@ -160,6 +178,9 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		}
 	}
 	
+	/**
+	 * Draws the background of the board itself.
+	 */
 	private void drawBoard() {
 		GRect board = new GRect(boardX, boardY, numCols() * cellWidth, numRows() * cellWidth);
 		board.setFilled(true);
@@ -167,6 +188,9 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		add(board);
 	}
 	
+	/**
+	 * Draws the holes in the board.
+	 */
 	private void drawBoardHoles() {
 		for(int row = 0; row < numRows(); row++) {
 			for(int col = 0; col < numCols(); col++) {
@@ -178,6 +202,9 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		}
 	}
 	
+	/**
+	 * Draws the grid lines that demarcate different board cells.
+	 */
 	private void drawBoardLines() {
 		for(int i = 1; i <= numCols(); i++) {
 			add(new GLine(boardX + i * cellWidth, boardY, boardX + i * cellWidth, boardY + numRows() * cellWidth));
@@ -187,6 +214,9 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		}
 	}
 	
+	/**
+	 * Draws the pieces on the board.
+	 */
 	private void drawPieces() {
 		for(int row = 0; row < numRows(); row++) {
 			for(int col = 0; col < numCols(); col++) {
@@ -198,6 +228,9 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		}
 	}
 	
+	/**
+	 * Draws the information bar at the bottom of the view.
+	 */
 	private void drawInfoBar() {
 		GRect background = new GRect(0, getHeight() - INFOBAR_HEIGHT, getWidth(), INFOBAR_HEIGHT);
 		background.setFilled(true);
@@ -215,6 +248,9 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		add(playerIndicator, INDICATOR_MARGIN, getHeight() - INFOBAR_HEIGHT + INDICATOR_MARGIN);
 	}
 	
+	/**
+	 * Draws the message label that broadcasts messages to the user.
+	 */
 	private void drawMsgLabel() {
 		if(msgLabel == null) msgLabel = new GLabel("");
 		msgLabel.setFont(MESSAGE_FONT);
@@ -222,22 +258,34 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		msgLabel.move(0, (INFOBAR_HEIGHT - 2 * INDICATOR_MARGIN + msgLabel.getAscent()) / 2);
 	}
 	
+	/**
+	 * Sets the player indicator to the appropriate color based on the current player.
+	 */
 	private void setIndicatorColor() {
 		playerIndicator.setFillColor((currPlayer == PLAYER_ONE) ? PLAYER_ONE_COLOR : PLAYER_TWO_COLOR);
 	}
 	
+	/**
+	 * Calculates the cell width for the board based on the available space.
+	 */
 	private void calcCellWidth() {
 		double availXSpace = getWidth() - 2 * BOARD_SIDE_MARGIN;
 		double availYSpace = getHeight() - (2 * BUTTON_MARGIN + BUTTON_HEIGHT) - BOARD_TOP_MARGIN - BOARD_BOTTOM_MARGIN - INFOBAR_HEIGHT;
-		if(((double)numRows() / numCols()) >= availYSpace / availXSpace) { // Too tall, use scale to availYSpace
+		if(((double)numRows() / numCols()) >= availYSpace / availXSpace) { // Too tall, scale according to availYSpace
 			cellWidth = availYSpace / numRows();
-		} else {
+		} else { // Too wide, scale according to availXSpace
 			cellWidth = availXSpace / numCols();
 		}
 		boardX = BOARD_SIDE_MARGIN + (availXSpace - numCols() * cellWidth) / 2;
 		boardY = 2 * BUTTON_MARGIN + BUTTON_HEIGHT + BOARD_TOP_MARGIN + (availYSpace - numRows() * cellWidth) / 2;
 	}
 	
+	/**
+	 * Waits for the human player to input a move (via the buttons), and then returns
+	 * the option that was clicked.
+	 * 
+	 * @return the move chosen by the human
+	 */
 	public int getHumanMove() {
 		waitingForHumanMove = true;
 		while(waitingForHumanMove) { // Will be changed by MouseEvent thread
@@ -248,6 +296,11 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		return humanMove;
 	}
 	
+	/**
+	 * Displays a message to the user using the information bar.
+	 * 
+	 * @param msg the message to display
+	 */
 	public void showMessage(String msg) {
 		msgLabel.setLabel(msg);
 	}
