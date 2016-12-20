@@ -57,7 +57,7 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 	}
 	
 	/**
-	 * 
+	 * Performs minimax search with alpha-beta pruning from the given (model, player) state.
 	 * 
 	 * @param model
 	 * @param player
