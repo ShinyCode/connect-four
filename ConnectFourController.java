@@ -19,16 +19,17 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 	}
 	
 	public void run() {
-		view.draw();
-		ConnectFourAI playerOneAI = getAIFromConsole(PLAYER_ONE);
-		ConnectFourAI playerTwoAI = getAIFromConsole(PLAYER_TWO);
-		println("Running game...");
-		int result = playGame(playerOneAI, playerTwoAI);
-		println("...finished game.");
-		determineWinner(result);
-		readLine();
-		view.reset();
-		
+		while(true) {
+			view.draw();
+			ConnectFourAI playerOneAI = getAIFromConsole(PLAYER_ONE);
+			ConnectFourAI playerTwoAI = getAIFromConsole(PLAYER_TWO);
+			println("Running game...");
+			int result = playGame(playerOneAI, playerTwoAI);
+			println("...finished game.");
+			determineWinner(result);
+			if(!askForReplay()) break;
+			view.reset();
+		}
 	}
 	
 	private ConnectFourAI getAIFromConsole(int player) {
