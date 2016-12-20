@@ -1,4 +1,5 @@
 
+import acm.io.IOConsole;
 import acm.program.*;
 
 public class ConnectFourController extends Program implements ConnectFourConstants {
@@ -9,6 +10,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		model = new ConnectFourModel(DEFAULT_ROWS, DEFAULT_COLS);
 		view = new ConnectFourView(DEFAULT_ROWS, DEFAULT_COLS);
 		add(view, CENTER);
+		add(new IOConsole(), CENTER);
 	}
 	
 	public void run() {
