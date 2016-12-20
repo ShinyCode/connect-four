@@ -59,12 +59,12 @@ public class AlphaBetaAI extends ConnectFourAI implements ConnectFourConstants {
 	/**
 	 * Performs minimax search with alpha-beta pruning from the given (model, player) state.
 	 * 
-	 * @param model
-	 * @param player
-	 * @param depth
-	 * @param alpha
-	 * @param beta
-	 * @return
+	 * @param model the current state of the game
+	 * @param player the current player who is moving
+	 * @param depth the remaining depth of the search
+	 * @param alpha the current value of alpha
+	 * @param beta the current value of beta
+	 * @return the minimax value of the state
 	 */
 	private double alphaBeta(ConnectFourModel model, int player, int depth, double alpha, double beta) {
 		if(model.isFull()) return 0.0;
