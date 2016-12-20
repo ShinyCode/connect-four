@@ -10,8 +10,19 @@ import acm.util.RandomGenerator;
  *
  */
 public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
+	/**
+	 * The default search depth to use
+	 */
 	private static final int DEFAULT_DEPTH = 3;
+	
+	/**
+	 * The maximum search depth for the AI
+	 */
 	private int maxDepth;
+	
+	/**
+	 * 
+	 */
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 	
 	public MinimaxAI() {
