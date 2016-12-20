@@ -28,6 +28,12 @@ public class SimpleAI extends ConnectFourAI implements ConnectFourConstants {
 		delay = 0;
 	}
 	
+	/**
+	 * Creates a SimpleAI with the specified delay (so the AI can be slowed down, and waits
+	 * before it begins to work)
+	 * 
+	 * @param delay the delay to use for the AI
+	 */
 	public SimpleAI(int delay) {
 		this.delay = delay;
 	}
