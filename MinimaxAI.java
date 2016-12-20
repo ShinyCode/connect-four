@@ -3,7 +3,12 @@ import java.util.List;
 
 import acm.util.RandomGenerator;
 
-
+/**
+ * Implements a ConnectFourAI that uses depth-limited minimax search.
+ * 
+ * @author Mark Sabini
+ *
+ */
 public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 	private static final int DEFAULT_DEPTH = 3;
 	private int maxDepth;
