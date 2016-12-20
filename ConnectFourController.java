@@ -30,6 +30,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 			if(!askForReplay()) break;
 			view.reset();
 		}
+		exit();
 	}
 	
 	private ConnectFourAI getAIFromConsole(int player) {
