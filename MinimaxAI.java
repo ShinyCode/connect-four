@@ -62,6 +62,14 @@ public class MinimaxAI extends ConnectFourAI implements ConnectFourConstants {
 		return bestMoves.get(rgen.nextInt(bestMoves.size()));
 	}
 	
+	/**
+	 * Performs minimax search from the given (model, player) state.
+	 * 
+	 * @param model the current state of the game
+	 * @param player the current player who is moving
+	 * @param depth the remaining depth of the search
+	 * @return the minimax value of the state
+	 */
 	private double minimax(ConnectFourModel model, int player, int depth) {
 		if(model.isFull()) return 0.0;
 		int result = model.checkWin();
