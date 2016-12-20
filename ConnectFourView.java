@@ -64,6 +64,7 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		currPlayer = PLAYER_ONE;
 		pieces = new GOval[DEFAULT_ROWS][DEFAULT_COLS];
 		buttons = new TouchButton[DEFAULT_COLS];
+		msgLabel.setLabel("");
 		draw();
 	}
 	
