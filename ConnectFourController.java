@@ -13,6 +13,7 @@ public class ConnectFourController extends Program implements ConnectFourConstan
 		view = new ConnectFourView(DEFAULT_ROWS, DEFAULT_COLS);
 		add(view, CENTER);
 		IOConsole console = new IOConsole();
+		setConsole(console);
 		add(console, CENTER);
 	}
 	
