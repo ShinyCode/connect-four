@@ -1,6 +1,11 @@
 import java.util.Stack;
 
-
+/**
+ * 
+ * 
+ * @author Mark Sabini
+ *
+ */
 public class ConnectFourModel implements ConnectFourConstants {
 	private int[][] board;
 	private Stack<Integer> moves;
