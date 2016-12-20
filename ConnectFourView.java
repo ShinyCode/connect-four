@@ -7,23 +7,69 @@ import dashboard.control.*;
 import acm.graphics.*;
 
 /**
- * 
+ * The ConnectFourView provides a display that depicts the state
+ * of a ConnectFour board. While it has nearly no logic on its own,
+ * the ConnectFourView does have basic error checking to make sure
+ * moves are valid.
  * 
  * @author Mark Sabini
  *
  */
 public class ConnectFourView extends GCanvas implements ConnectFourConstants, MouseListener, ComponentListener {
+	/**
+	 * The various pieces that are drawn on the board
+	 */
 	private GOval[][] pieces;
+	
+	/**
+	 * Buttons to allow users to input moves
+	 */
 	private TouchButton[] buttons;
+	
+	/**
+	 * A colored rectangle to indicate what player is moving
+	 */
 	private GRect playerIndicator;
+	
+	/**
+	 * A label for displaying a message to the user
+	 */
 	private GLabel msgLabel;
+	
+	/**
+	 * Whether the view is waiting for a human to click
+	 */
 	private boolean waitingForHumanMove = false;
+	
+	/**
+	 * The move that the human chose, if the view was expecting a click
+	 */
 	private int humanMove = 0;
+	
+	/**
+	 * The x-coordinate of the top-left corner of the board
+	 */
 	private double boardX = 0;
+	
+	/**
+	 * The y-coordinate of the top-left corner of the board
+	 */
 	private double boardY = 0;
+	
+	/**
+	 * How wide each square cell is
+	 */
 	private double cellWidth = 0;
+	
+	/**
+	 * The current player who is moving
+	 */
 	private double currPlayer = PLAYER_ONE;
 	
+	/**
+	 * Creates a ConnectFourView with DEFAULT_ROWS rows and DEFAULT_COLS columns.
+	 * The default values for the constants are usually 6 and 7, respectively.
+	 */
 	public ConnectFourView() {
 		pieces = new GOval[DEFAULT_ROWS][DEFAULT_COLS];
 		buttons = new TouchButton[DEFAULT_COLS];
@@ -31,6 +77,12 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		addComponentListener(this);
 	}
 	
+	/**
+	 * Creates a ConnectFourView with the specified number of rows and columns.
+	 * 
+	 * @param numRows the number of rows for the model
+	 * @param numCols the number of columns for the model
+	 */
 	public ConnectFourView(int numRows, int numCols) {
 		pieces = new GOval[numRows][numCols];
 		buttons = new TouchButton[numCols];
@@ -38,10 +90,18 @@ public class ConnectFourView extends GCanvas implements ConnectFourConstants, Mo
 		addComponentListener(this);
 	}
 	
+	/**
+	 * Returns the number of rows in the depicted board
+	 * @return the number of rows in the depicted board
+	 */
 	public int numRows() {
 		return pieces.length;
 	}
 	
+	/**
+	 * Returns the number of columns in the depicted board
+	 * @return the number of columns in the depicted board
+	 */
 	public int numCols() {
 		if(pieces.length > 0) return pieces[0].length;
 		return 0;
