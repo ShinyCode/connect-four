@@ -19,7 +19,7 @@ public class ConnectFour extends Program implements ConnectFourConstants {
 	private ConnectFourModel model;
 	
 	/**
-	 * View displaying a graphical depiction of the board
+	 * View displaying a graphical representation of the board
 	 */
 	private ConnectFourView view;
 	
@@ -51,6 +51,13 @@ public class ConnectFour extends Program implements ConnectFourConstants {
 		exit();
 	}
 	
+	/**
+	 * Prompts the user to specify an AI to use for the given player,
+	 * and returns the appropriate AI.
+	 * 
+	 * @param player the player for the AI, either PLAYER_ONE or PLAYER_TWO
+	 * @return the AI for the specified player
+	 */
 	private ConnectFourAI getAIFromConsole(int player) {
 		int aiNumber = 0;
 		while(true) {
