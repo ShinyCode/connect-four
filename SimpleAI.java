@@ -11,7 +11,14 @@ import acm.util.RandomGenerator;
  *
  */
 public class SimpleAI extends ConnectFourAI implements ConnectFourConstants {
+	/**
+	 * The optional delay to use for the AI
+	 */
 	private int delay;
+	
+	/**
+	 * Random generator for move selection
+	 */
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 	
 	public SimpleAI() {
